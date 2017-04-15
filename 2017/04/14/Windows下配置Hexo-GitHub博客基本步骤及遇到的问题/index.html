@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
-<meta property="og:updated_time" content="2017-04-15T10:40:43.269Z">
+<meta property="og:updated_time" content="2017-04-15T12:55:01.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
@@ -212,15 +212,22 @@
 <p>文章头的reward和comments分别为打赏和评论，值为True/False</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page xxx</div></pre></td></tr></table></figure>
 <p>可以新建一个名为xxx的页面，以此做了一个留言板</p>
-<h3 id="网易云跟帖"><a href="#网易云跟帖" class="headerlink" title="网易云跟帖"></a>网易云跟帖</h3><p>添加评论的功能</p>
+<hr>
+<p><em>以下是对<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>主题的修改，增加一些功能</em></p>
+<h3 id="跟帖及留言"><a href="#跟帖及留言" class="headerlink" title="跟帖及留言"></a>跟帖及留言</h3><p>添加评论以及留言的功能，的功能，按照<a href="http://lawlite.me/" target="_blank" rel="external">lawlite</a>的方法并没有成功，因此改用来必力的跟帖</p>
+<p>从来比力网站获取web代码后，在themes\yilia\layout\ _partial下的article.ejs最后添加即可</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">post.comments</span>)&#123; %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"XXXXXXXXX"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">   (function(d, s) &#123;</div><div class="line">       var j, e = d.getElementsByTagName(s)[0];</div><div class="line"></div><div class="line">       if (typeof LivereTower === 'function') &#123; return; &#125;</div><div class="line"></div><div class="line">       j = d.createElement(s);</div><div class="line">       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';</div><div class="line">       j.async = true;</div><div class="line"></div><div class="line">       e.parentNode.insertBefore(j, e);</div><div class="line">   &#125;)(document, 'script');</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> 为正常使用来必力评论功能请激活JavaScript<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
+<p>最外层的标签可以取消在主页和控制文章中显示跟帖</p>
+<h3 id="网站访问量功能"><a href="#网站访问量功能" class="headerlink" title="网站访问量功能"></a>网站访问量功能</h3><p>在<a href="[http://ibruce.info/2015/04/04/busuanzi/](http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>)获取代码后放入themes\yilia\layout\ _partial下的footer.ejs中即可</p>
 <h3 id="在文章中插入音乐"><a href="#在文章中插入音乐" class="headerlink" title="在文章中插入音乐"></a>在文章中插入音乐</h3><p>由于是在github上搭建的博客，直接从网易云获取的外链不支持https，从知乎搜索到一个解决办法</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-tag-aplayer</div></pre></td></tr></table></figure>
 <p>安装播放器插件</p>
 <p>在<a href="https://github.com/YUX-IO/163music-APlayer-you-get-docker" target="_blank" rel="external">A Flask Music Project. Demo</a>项目中找到音乐链接，修改相应参数即可</p>
 <p>例如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">329</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">"https://music.daoapp.io/iframe?song=26513177&amp;qssl=1&amp;qlrc=1&amp;autoplay=1&amp;narrow=0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">329</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">"https://music.daoapp.io/iframe?song=26513177&amp;qssl=1&amp;qlrc=1&amp;autoplay=0&amp;narrow=0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="329" height="100" src="https://music.daoapp.io/iframe?song=26513177&qssl=1&qlrc=1&autoplay=1&narrow=0"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="329" height="100" src="https://music.daoapp.io/iframe?song=26513177&qssl=1&qlrc=1&autoplay=0&narrow=0"></iframe>
       
 
       
