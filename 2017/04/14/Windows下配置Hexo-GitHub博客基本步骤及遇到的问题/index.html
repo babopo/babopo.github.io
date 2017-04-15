@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下： 安装Node.js及Git从主页下载即可，配置好git 安装hexo打开终端，输入 1npm install -g">
-<meta property="og:updated_time" content="2017-04-15T02:10:16.670Z">
+<meta property="og:updated_time" content="2017-04-15T02:55:28.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下： 安装Node.js及Git从主页下载即可，配置好git 安装hexo打开终端，输入 1npm install -g">
@@ -60,6 +60,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="/留言">留言</a></li>
 	        
 			</ul>
 		</nav>
@@ -115,6 +117,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -132,12 +136,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/留言">留言</a></li>
 		        
 				</ul>
 			</nav>
@@ -186,6 +192,7 @@
 <p>查看是否创建成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. hexo generate <span class="comment">#生成静态页面</span></div><div class="line">2. hexo server <span class="comment">#在本地启动</span></div></pre></td></tr></table></figure>
 <p>浏览器输入默认的local:4000端口即可查看页面</p>
+<a id="more"></a>
 <h4 id="创建GitHub-repo"><a href="#创建GitHub-repo" class="headerlink" title="创建GitHub repo"></a>创建GitHub repo</h4><p>注意repo名应当为username.github.io否则部署后会有问题</p>
 <h4 id="获取SSH密钥并添加"><a href="#获取SSH密钥并添加" class="headerlink" title="获取SSH密钥并添加"></a>获取SSH密钥并添加</h4><p>打开终端，键入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"xxx@xx"</span> <span class="comment">#后为邮箱地址</span></div></pre></td></tr></table></figure>
@@ -212,6 +219,8 @@
 <p>在域名管理页的DNS控制中添加域名解析类型为A指向IP地址(在控制台中ping一下搭好的博客地址可以得到)或者添加CNAME指向域名，选择其一即可，不能同时添加</p>
 <p>在source目录下添加名为CNAME的文件(无后缀)，内容为你要绑定的域名</p>
 <p>修改_config.yml中的url为要绑定的域名，部署即可</p>
+<h3 id="关于写作"><a href="#关于写作" class="headerlink" title="关于写作"></a>关于写作</h3><p>在文章中加入<code>&lt;!-- more --&gt;</code>可以将文章截断显示在主页，防止文章过长</p>
+<p>文章头的reward和comments分别为打赏和评论，值为True/False</p>
 
       
 
@@ -424,14 +433,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
               </li>
              
@@ -445,6 +446,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
