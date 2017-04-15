@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
-<meta property="og:updated_time" content="2017-04-15T12:55:01.050Z">
+<meta property="og:updated_time" content="2017-04-15T12:56:58.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
@@ -219,7 +219,7 @@
 <p>例如：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">post.comments</span>)&#123; %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"XXXXXXXXX"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">   (function(d, s) &#123;</div><div class="line">       var j, e = d.getElementsByTagName(s)[0];</div><div class="line"></div><div class="line">       if (typeof LivereTower === 'function') &#123; return; &#125;</div><div class="line"></div><div class="line">       j = d.createElement(s);</div><div class="line">       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';</div><div class="line">       j.async = true;</div><div class="line"></div><div class="line">       e.parentNode.insertBefore(j, e);</div><div class="line">   &#125;)(document, 'script');</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> 为正常使用来必力评论功能请激活JavaScript<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
 <p>最外层的标签可以取消在主页和控制文章中显示跟帖</p>
-<h3 id="网站访问量功能"><a href="#网站访问量功能" class="headerlink" title="网站访问量功能"></a>网站访问量功能</h3><p>在<a href="[http://ibruce.info/2015/04/04/busuanzi/](http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>)获取代码后放入themes\yilia\layout\ _partial下的footer.ejs中即可</p>
+<h3 id="网站访问量功能"><a href="#网站访问量功能" class="headerlink" title="网站访问量功能"></a>网站访问量功能</h3><p>在<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子</a>获取代码后放入themes\yilia\layout\ _partial下的footer.ejs中即可</p>
 <h3 id="在文章中插入音乐"><a href="#在文章中插入音乐" class="headerlink" title="在文章中插入音乐"></a>在文章中插入音乐</h3><p>由于是在github上搭建的博客，直接从网易云获取的外链不支持https，从知乎搜索到一个解决办法</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-tag-aplayer</div></pre></td></tr></table></figure>
 <p>安装播放器插件</p>
@@ -466,19 +466,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
