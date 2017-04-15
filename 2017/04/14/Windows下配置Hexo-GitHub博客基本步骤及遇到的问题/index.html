@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下： 安装Node.js及Git从主页下载即可，配置好git 安装hexo打开终端，输入 1npm install -g">
-<meta property="og:updated_time" content="2017-04-14T13:41:55.599Z">
+<meta property="og:updated_time" content="2017-04-15T01:42:57.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下： 安装Node.js及Git从主页下载即可，配置好git 安装hexo打开终端，输入 1npm install -g">
@@ -169,6 +169,8 @@
 </a>
         
       </header>
+      <!-- 显示阅读和评论数 -->
+      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -205,6 +207,10 @@
 <p>由于国内的特殊网络环境，访问已搭建好的页面需要输入<a href="https://username.github.io" target="_blank" rel="external">https://username.github.io</a></p>
 <h3 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a>Hexo主题</h3><p>推荐一个主题<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a></p>
 <p>也是本站正使用的，Reademe很详细也不再此赘述</p>
+<h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>如果你有闲置的域名，可以将其绑定至刚配置好的博客页</p>
+<p>在域名管理页的DNS控制中添加域名解析类型为A指向IP地址(在控制台中ping一下搭好的博客地址可以得到)或者添加CNAME指向域名，选择其一即可，不能同时添加</p>
+<p>在source目录下添加名为CNAME的文件(无后缀)，内容为你要绑定的域名</p>
+<p>修改_config.yml中的url为要绑定的域名，部署即可</p>
 
       
 
@@ -321,6 +327,8 @@
 
 
 
+<!-- 网易云跟帖 -->
+
           </div>
         </div>
       </div>
@@ -403,19 +411,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
