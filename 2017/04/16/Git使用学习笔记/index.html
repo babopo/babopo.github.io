@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/16/Git使用学习笔记/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="大部分内容来自廖雪峰的博客及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10">
-<meta property="og:updated_time" content="2017-04-16T03:45:47.989Z">
+<meta property="og:updated_time" content="2017-04-29T03:27:39.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用学习笔记">
 <meta name="twitter:description" content="大部分内容来自廖雪峰的博客及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10">
@@ -180,7 +180,7 @@
         <script src="/assets/js/APlayer.min.js"> </script><p>大部分内容来自<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的博客</a>及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10</p>
 <a id="more"></a>
 <p>安装过程略</p>
-<p>在希望进行版本控制的目录下</p>
+<h3 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h3><p>在希望进行版本控制的目录下</p>
 <ul>
 <li>创建仓库</li>
 </ul>
@@ -251,11 +251,20 @@ git reset HEAD &lt;filename&gt; #撤销暂存区的修改，放回工作区，�
 <ul>
 <li><p>推送至github远程仓库</p>
 <ol>
-<li>添加ssh公钥</li>
-<li>在github上创建repo后根据提示在本地已建立好的仓库输入对应指令</li>
-<li>在本地 <code>git commit</code>之后<code>git push origin master #本地master推送至远程origin地址</code>可推送至远程仓库</li>
+<li><p>添加ssh公钥</p>
+</li>
+<li><p>在github上创建repo后根据提示在本地已建立好的仓库输入对应指令</p>
+</li>
 </ol>
 </li>
+</ul>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code class="bash">git remote add origin git@github.com:XXXXXXX/XXX.git
+</code></pre>
+<ol>
+<li>在本地 <code>git commit</code>之后<code>git push origin master #本地master推送至远程origin地址</code>可推送至远程仓库</li>
+</ol>
+<ul>
 <li><p>分支管理</p>
 <p>通过创建其他分支，对新的分支的修改不影响原有<strong>master</strong>分支，新分支工作完成后再合并</p>
 <ul>
@@ -310,6 +319,13 @@ git push origin :refs/tags/&lt;tagname&gt; #远程删除标签
 <p><code>git add -f &lt;filename&gt;</code>可强制提交</p>
 </li>
 </ul>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><ul>
+<li>远程仓库非空，连接本地仓库后不能直接push，可以输入-f参数强制push</li>
+</ul>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code class="bash">git push origin master -f  #warning: 会完全覆盖远程仓库，包括之前的commit
+</code></pre>
+<p>  ​</p>
 
       
 
@@ -541,19 +557,11 @@ git push origin :refs/tags/&lt;tagname&gt; #远程删除标签
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,6 +570,14 @@ git push origin :refs/tags/&lt;tagname&gt; #远程删除标签
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
