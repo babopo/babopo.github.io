@@ -184,32 +184,19 @@
 <ul>
 <li>创建仓库</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git init
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>添加文件至暂缓区</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git add &lt;filename&gt; #添加指定文件
-git add . #添加所有变化的文件，但不包括删除的
-git add -u #只监控已被add的文件
-git add -A #上两个命令的集合
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add &lt;filename&gt; <span class="comment">#添加指定文件</span></div><div class="line">git add . <span class="comment">#添加所有变化的文件，但不包括删除的</span></div><div class="line">git add -u <span class="comment">#只监控已被add的文件</span></div><div class="line">git add -A <span class="comment">#上两个命令的集合</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>从暂缓区提交至仓库</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git commit -m &quot;xxx&quot; #引号内为修改备注
-git commit #会直接在控制台用vi打开编辑文档，不添加修改信息的话commit会失败！
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">"xxx"</span> <span class="comment">#引号内为修改备注</span></div><div class="line">git commit <span class="comment">#会直接在控制台用vi打开编辑文档，不添加修改信息的话commit会失败！</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>查看工作区下修改文件的状态</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git status #查看是否有文件被修改
-git diff &lt;filename&gt; #查看修改内容
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git status <span class="comment">#查看是否有文件被修改</span></div><div class="line">git diff &lt;filename&gt; <span class="comment">#查看修改内容</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li><p>版本控制</p>
 <ul>
@@ -217,37 +204,25 @@ git diff &lt;filename&gt; #查看修改内容
 </ul>
 </li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git log #查看提交日志
-git log --pretty=oneline #仅显示SHA1值和commit信息
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> <span class="comment">#查看提交日志</span></div><div class="line">git <span class="built_in">log</span> --pretty=oneline <span class="comment">#仅显示SHA1值和commit信息</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>版本回退</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git reset --hard HEAD^ #回退至上一个版本
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard HEAD^ <span class="comment">#回退至上一个版本</span></div></pre></td></tr></table></figure><p></p>
 <pre><code>原理为改变HEAD指针的指向，通过添加^的个数来指向不同的版本，个数较多可写为HEAD~num，也可以用SHA1值的前几位直接指定
 </code></pre><ul>
 <li>查看命令记录</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git reflog
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reflog</div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>撤销修改</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git checkout -- &lt;filename&gt; #只在工作区的修改，未提交至暂存区，可以还原被删除的文件
-git reset HEAD &lt;filename&gt; #撤销暂存区的修改，放回工作区，注意没有 --hard参数
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -- &lt;filename&gt; <span class="comment">#只在工作区的修改，未提交至暂存区，可以还原被删除的文件</span></div><div class="line">git reset HEAD &lt;filename&gt; <span class="comment">#撤销暂存区的修改，放回工作区，注意没有 --hard参数</span></div></pre></td></tr></table></figure><p></p>
 <pre><code>应当注意`git reset HEAD &lt;filename&gt;` 指令工作区保留的是add之前对工作区的修改，如果在这之后对文件有修改，执行`git status`能看到有对文件的修改
 </code></pre><ul>
 <li>删除文件</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git rm &lt;filename&gt;
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rm &lt;filename&gt;</div></pre></td></tr></table></figure><p></p>
 <ul>
 <li><p>推送至github远程仓库</p>
 <ol>
@@ -258,9 +233,7 @@ git reset HEAD &lt;filename&gt; #撤销暂存区的修改，放回工作区，�
 </ol>
 </li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git remote add origin git@github.com:XXXXXXX/XXX.git
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:XXXXXXX/XXX.git</div></pre></td></tr></table></figure><p></p>
 <ol>
 <li>在本地 <code>git commit</code>之后<code>git push origin master #本地master推送至远程origin地址</code>可推送至远程仓库</li>
 </ol>
@@ -272,47 +245,23 @@ git reset HEAD &lt;filename&gt; #撤销暂存区的修改，放回工作区，�
 </ul>
 </li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git checkout -b xxx #创建新分支并切换至该分支 -b参数表示新建
-git branch #查看当前分支
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -b xxx <span class="comment">#创建新分支并切换至该分支 -b参数表示新建</span></div><div class="line">git branch <span class="comment">#查看当前分支</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>合并分支</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git checkout master
-git merge xxx ##切换回master分支后将xxx分支的工作合并进来 
-git branch -d xxx #删除xxx分支，未合并的分支需强制删除，此时使用-D参数
-git log --graph #查看分支合并图
-git merge --no-ff -m &quot;xxxxx&quot; xxx #--no-ff表示禁用fast forward模式，带此参数可为merge添加commit
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout master</div><div class="line">git merge xxx <span class="comment">##切换回master分支后将xxx分支的工作合并进来 </span></div><div class="line">git branch <span class="_">-d</span> xxx <span class="comment">#删除xxx分支，未合并的分支需强制删除，此时使用-D参数</span></div><div class="line">git <span class="built_in">log</span> --graph <span class="comment">#查看分支合并图</span></div><div class="line">git merge --no-ff -m <span class="string">"xxxxx"</span> xxx <span class="comment">#--no-ff表示禁用fast forward模式，带此参数可为merge添加commit</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>工作封存</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git stash #将当前分支所做的工作储存，恢复到上次commit的状态，此时可任意切换合并分支操作
-git stash list #查看
-git stash apply xxxx #恢复
-git stash drop #删除
-git stash pop #上两个命令的综合
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git stash <span class="comment">#将当前分支所做的工作储存，恢复到上次commit的状态，此时可任意切换合并分支操作</span></div><div class="line">git stash list <span class="comment">#查看</span></div><div class="line">git stash apply xxxx <span class="comment">#恢复</span></div><div class="line">git stash drop <span class="comment">#删除</span></div><div class="line">git stash pop <span class="comment">#上两个命令的综合</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>查看远程仓库信息</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git remote -v
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v</div></pre></td></tr></table></figure><p></p>
 <ul>
 <li>标签管理</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git tag &lt;name&gt; #-d删除
-git tag commit_id
-git tag #查看
-git show &lt;tagname&gt; #查看标签信息
-git push orign &lt;tagname&gt; #推送标签至远程
-git push origin :refs/tags/&lt;tagname&gt; #远程删除标签
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git tag &lt;name&gt; <span class="comment">#-d删除</span></div><div class="line">git tag commit_id</div><div class="line">git tag <span class="comment">#查看</span></div><div class="line">git show &lt;tagname&gt; <span class="comment">#查看标签信息</span></div><div class="line">git push orign &lt;tagname&gt; <span class="comment">#推送标签至远程</span></div><div class="line">git push origin :refs/tags/&lt;tagname&gt; <span class="comment">#远程删除标签</span></div></pre></td></tr></table></figure><p></p>
 <ul>
 <li><p>忽略文件</p>
 <p>目录下创建<code>.gitignore</code>文件，将不需要提交的文件写入并将<code>.gitignore</code>提交即可</p>
@@ -322,9 +271,7 @@ git push origin :refs/tags/&lt;tagname&gt; #远程删除标签
 <h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><ul>
 <li>远程仓库非空，连接本地仓库后不能直接push，可以输入-f参数强制push</li>
 </ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="bash">git push origin master -f  #warning: 会完全覆盖远程仓库，包括之前的commit
-</code></pre>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin master <span class="_">-f</span>  <span class="comment">#warning: 会完全覆盖远程仓库，包括之前的commit</span></div></pre></td></tr></table></figure><p></p>
 <p>  ​</p>
 
       
@@ -574,15 +521,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,11 +541,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,14 +562,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
