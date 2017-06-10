@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
-<meta property="og:updated_time" content="2017-06-10T14:31:11.163Z">
+<meta property="og:updated_time" content="2017-06-10T14:33:58.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
@@ -230,11 +230,12 @@
 <h3 id="在文章中插入音乐"><a href="#在文章中插入音乐" class="headerlink" title="在文章中插入音乐"></a>在文章中插入音乐</h3><p>由于是在github上搭建的博客，直接从网易云获取的外链不支持https，从知乎搜索到一个解决办法</p>
 <p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-tag-aplayer</div></pre></td></tr></table></figure><p></p>
 <p>安装播放器插件</p>
-<p>在<a href="https://github.com/YUX-IO/163music-APlayer-you-get-docker" target="_blank" rel="external">A Flask Music Project. Demo</a>项目中找到音乐链接，修改相应参数即可</p>
-<p>例如：</p>
-<p></p><p class="code-caption" data-lang="html" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">329</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">"https://music.daoapp.io/iframe?song=26513177&amp;qssl=1&amp;qlrc=1&amp;autoplay=0&amp;narrow=0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
+<p><del>在<a href="https://github.com/YUX-IO/163music-APlayer-you-get-docker" target="_blank" rel="external">A Flask Music Project. Demo</a>项目中找到音乐链接，修改相应参数即可</del></p>
+<p>在网易云音乐中找到对应曲目，然后生成外链。</p>
+<p>代码如下：</p>
+<p></p><p class="code-caption" data-lang="html" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">329</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">"https://music.163.com/outchain/player?type=2&amp;id=26513177&amp;auto=0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
 <p>效果如下：</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="329" height="100" src="https://music.163.com/outchain/player?type=2&id=26513177&auto=1"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="329" height="100" src="https://music.163.com/outchain/player?type=2&id=26513177&auto=0"></iframe>
       
 
       
@@ -490,15 +491,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,11 +519,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
