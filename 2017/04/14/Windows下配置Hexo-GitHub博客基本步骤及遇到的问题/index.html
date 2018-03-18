@@ -15,7 +15,7 @@
 <meta property="og:url" content="//limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
-<meta property="og:updated_time" content="2017-06-10T14:33:58.468Z">
+<meta property="og:updated_time" content="2018-03-18T15:26:20.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta name="twitter:description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
@@ -191,12 +191,15 @@
 <p>浏览器输入默认的local:4000端口即可查看页面</p>
 <h4 id="创建GitHub-repo"><a href="#创建GitHub-repo" class="headerlink" title="创建GitHub repo"></a>创建GitHub repo</h4><p>注意repo名应当为username.github.io否则部署后会有问题</p>
 <h4 id="获取SSH密钥并添加"><a href="#获取SSH密钥并添加" class="headerlink" title="获取SSH密钥并添加"></a>获取SSH密钥并添加</h4><p>打开终端，键入</p>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"xxx@xx"</span> <span class="comment">#后为邮箱地址</span></div></pre></td></tr></table></figure><p></p>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"xxx@xx"</span> <span class="comment">#后为github账号注册时的邮箱地址</span></div></pre></td></tr></table></figure><p></p>
 <p>在User\name \ .ssh\路径下找到id_rsa.pub</p>
 <p>复制密钥，添加入GitHub的setting中即可</p>
 <p>测试是否添加成功：打开终端，输入：</p>
 <p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure><p></p>
 <p>成功添加会提示相应字样</p>
+<p>ps：代理等原因会影响连接，例如</p>
+<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">$ ssh -vT git@github.com</div><div class="line">OpenSSH_7.3p1, OpenSSL 1.0.2k  26 Jan 2017</div><div class="line">debug1: Reading configuration data /etc/ssh/ssh_config</div><div class="line">debug1: Connecting to github.com [93.46.8.89] port 22.</div><div class="line">debug1: Connection established.</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_rsa <span class="built_in">type</span> 1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_rsa-cert <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_dsa <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_dsa-cert <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_ecdsa <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_ecdsa-cert <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_ed25519 <span class="built_in">type</span> -1</div><div class="line">debug1: key_load_public: No such file or directory</div><div class="line">debug1: identity file /c/Users/Limbo/.ssh/id_ed25519-cert <span class="built_in">type</span> -1</div><div class="line">debug1: Enabling compatibility mode <span class="keyword">for</span> protocol 2.0</div><div class="line">debug1: Local version string SSH-2.0-OpenSSH_7.3</div><div class="line">ssh_exchange_identification: Connection closed by remote host</div></pre></td></tr></table></figure><p></p>
+<p>关闭代理即可</p>
 <h4 id="Hexo的配置和部署"><a href="#Hexo的配置和部署" class="headerlink" title="Hexo的配置和部署"></a>Hexo的配置和部署</h4><p>_config.yml为全局配置文件，在Deployment区域，修改为：</p>
 <p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo:</div><div class="line">      github: git@github.com:username/username.github.io.git,master</div></pre></td></tr></table></figure><p></p>
 <p>若要关联自己的域名令需添加CNAME文件</p>
@@ -503,14 +506,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
               </li>
              
@@ -519,11 +514,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
