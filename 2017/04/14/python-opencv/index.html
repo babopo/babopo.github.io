@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="limbotech.top">
   <title>Windows下Pycharm+Anaconda+Opencv图像处理环境配置 | Limbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="limbotech.top/2017/04/14/python-opencv/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="软件下载略 opencv 的库可以从这里下载： Unofficial Windows Binaries for Python Extension Packages">
+<meta property="og:locale" content="zn-Hans">
 <meta property="og:updated_time" content="2017-05-09T03:28:55.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下Pycharm+Anaconda+Opencv图像处理环境配置">
@@ -40,7 +41,7 @@
   <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css">
   <script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
 </head>
-
+</html>
 <!-- ad start -->  
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -187,22 +188,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>软件下载略</p>
+        <script src="\assets\js\APlayer.min.js"> </script><p>软件下载略</p>
 <p><strong>opencv</strong> 的库可以从这里下载：</p>
-<p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="external">Unofficial Windows Binaries for Python Extension Packages</a></p>
+<p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">Unofficial Windows Binaries for Python Extension Packages</a></p>
 <a id="more"></a>
 <p>复制入/lib/site-packages</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install *.whl</div></pre></td></tr></table></figure><p></p>
+<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install *.whl</span><br></pre></td></tr></table></figure><p></p>
 <p>进行安装</p>
 <p><strong>Anaconda</strong>是一个成熟的python科学计算发行版，包含很多常用的库，省去了很多麻烦</p>
 <p>可以在这里获取licenses，并放入user/.continuum：</p>
-<p><a href="https://anaconda.org/limbopy/settings/add-ons" target="_blank" rel="external">licenses</a></p>
+<p><a href="https://anaconda.org/limbopy/settings/add-ons" target="_blank" rel="noopener">licenses</a></p>
 <p>有自己的控制台命令</p>
-<p></p><p class="code-caption" data-lang="conda" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda -h</div></pre></td></tr></table></figure><p></p>
+<p></p><p class="code-caption" data-lang="conda" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda -h</span><br></pre></td></tr></table></figure><p></p>
 <p>可以查看帮助</p>
 <p><strong>Pycharm</strong>是功能强大的python IDE，虽然<strong>Anaconda</strong>有捆绑<strong>Spyder</strong>，但这款功能更强</p>
-<h3 id="PyQt5的配置"><a href="#PyQt5的配置" class="headerlink" title="PyQt5的配置"></a>PyQt5的配置</h3><p>由于需要编写GUI，与设计数据库的方式很类似，配置可参考<a href="http://www.jianshu.com/p/094928ac0b73" target="_blank" rel="external">Python3 PyQt5 pycharm 环境搭建</a></p>
-<p>在from PyQt5 import 包时报错，原因是Python3.6(Anaconda)目录下缺少python3.dll文件，从官网下载embeddable包复制即可，参考<a href="http://blog.5ibc.net/p/116112.html" target="_blank" rel="external">python3.6.0(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</a></p>
+<h3 id="PyQt5的配置"><a href="#PyQt5的配置" class="headerlink" title="PyQt5的配置"></a>PyQt5的配置</h3><p>由于需要编写GUI，与设计数据库的方式很类似，配置可参考<a href="http://www.jianshu.com/p/094928ac0b73" target="_blank" rel="noopener">Python3 PyQt5 pycharm 环境搭建</a></p>
+<p>在from PyQt5 import 包时报错，原因是Python3.6(Anaconda)目录下缺少python3.dll文件，从官网下载embeddable包复制即可，参考<a href="http://blog.5ibc.net/p/116112.html" target="_blank" rel="noopener">python3.6.0(Anaconda)安装PyQt5，“DLL load failed: 找不到指定的模块</a></p>
 <p>需要调用资源配置在pyrcc中配置，与配置pyuic类似，pyrcc5.exe文件再anaconda/scripts目录下</p>
 
       
@@ -321,18 +322,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/16/Git使用学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Windows下配置Hexo+GitHub博客基本步骤及遇到的问题
+          Git使用学习笔记
         
       </div>
     </a>
   
   
-    <a href="/2017/04/16/Git使用学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git使用学习笔记</div>
+    <a href="/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Windows下配置Hexo+GitHub博客基本步骤及遇到的问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -486,7 +487,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,11 +499,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,19 +527,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +555,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             2、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

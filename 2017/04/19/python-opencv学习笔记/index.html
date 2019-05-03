@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="limbotech.top">
   <title>python+opencv学习笔记 | Limbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="limbotech.top/2017/04/19/python-opencv学习笔记/index.html">
 <meta property="og:site_name" content="Limbo">
 <meta property="og:description" content="记录学习过程中的一些疑问">
+<meta property="og:locale" content="zn-Hans">
 <meta property="og:updated_time" content="2017-04-18T22:37:23.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python+opencv学习笔记">
@@ -40,7 +41,7 @@
   <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css">
   <script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
 </head>
-
+</html>
 <!-- ad start -->  
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -187,10 +188,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>记录学习过程中的一些疑问</p>
+        <script src="\assets\js\APlayer.min.js"> </script><p>记录学习过程中的一些疑问</p>
 <a id="more"></a>
 <ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cv.imread()</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.imread()</span><br></pre></td></tr></table></figure>
 <p>有两个参数：第一个参数为要读入的图片文件名，第二个参数为如何读取图片，包括cv2.IMREAD_COLOR：读入一副彩色图片；cv2.IMREAD_GRAYSCALE：以灰度模式读入图片；cv2.IMREAD_UNCHANGED：读入一幅图片，并包括其alpha通道。默认第二个参数不填。</p>
 </li>
 <li><p>在Opencv下加载的图像是BGR格式，而在Matplotlib中是RGB格式</p>
@@ -283,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/18/验证码识别技术研究/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/10/Qt学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          验证码识别研究
+          Qt学习笔记
         
       </div>
     </a>
   
   
-    <a href="/2017/05/10/Qt学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Qt学习笔记</div>
+    <a href="/2017/04/18/验证码识别技术研究/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">验证码识别研究</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -448,7 +449,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +461,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">PyQt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,19 +489,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,7 +517,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             2、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
