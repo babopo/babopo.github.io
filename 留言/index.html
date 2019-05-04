@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zn">
+<html style="display: none;" lang="en">
     <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
@@ -24,10 +24,19 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
 
 
 
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
 
 
 
@@ -81,7 +90,7 @@
     <!-- Import CSS -->
     
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?uVzgA6RLrOm13Ukw8Qgy+A==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
 
@@ -164,12 +173,12 @@
 <!-- Theme Background Related-->
 
     <style>
-      body{
+      body {
         background-color: #F5F5F5;
       }
 
       /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
         background-color: #fff;
       }
     </style>
@@ -212,7 +221,7 @@
 
     <!-- Import jQuery -->
     
-        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
     
 
     <!-- WebAPP Icons -->
@@ -252,14 +261,18 @@
 
     <!-- Structured-data for SEO -->
     
-        
-
-
-
-    
 
     <!-- Analytics -->
     
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?4588d4f20f54d596577537fa3227cc08';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
     
     
 
@@ -363,12 +376,14 @@
     
 
     
+        
+    
 
     <!-- Share Weibo -->
     
         <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=留言&url=limbotech.top/留言/index.html&pic=limbotech.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
-                شارك على Weibo
+                Share to Weibo
             </li>
         </a>
     
@@ -377,7 +392,7 @@
     
         <a class="post_share-link" href="https://twitter.com/intent/tweet?text=留言&url=limbotech.top/留言/index.html&via=Limbo" target="_blank">
             <li class="mdl-menu__item">
-                شارك على Twitter
+                Share to Twitter
             </li>
         </a>
     
@@ -386,7 +401,7 @@
     
         <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=limbotech.top/留言/index.html" target="_blank">
             <li class="mdl-menu__item">
-                شارك على Facebook
+                Share to Facebook
             </li>
         </a>
     
@@ -395,7 +410,7 @@
     
         <a class="post_share-link" href="https://plus.google.com/share?url=limbotech.top/留言/index.html" target="_blank">
             <li class="mdl-menu__item">
-                شارك على Google+
+                Share to Google+
             </li>
         </a>
     
@@ -436,6 +451,31 @@
                 <!-- Post Comments -->
                 
                     
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "96iFRipcoNOqH2QAFoQyjBNV-gzGzoHsz",
+        appKey: "GCHn75Cx5GMsOcWlxfKtMSLp",
+        placeholder: "快来喷我",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
                 
             </div>
 
@@ -484,7 +524,7 @@
 
     <!-- Sidebar Email -->
     <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
+        llb123@live.com
         <b class="caret"></b>
     </a>
 </div>
@@ -497,7 +537,7 @@
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="#" target="_blank" title="Email Me">
+                    <a href="mailto: llb123@live.com" target="_blank" title="Email Me">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
@@ -515,7 +555,7 @@
                 
                     <i class="material-icons sidebar-material-icons">home</i>
                 
-                الرئيسية
+                Home
             </a>
         </li>
         
@@ -528,12 +568,12 @@
                 
                     <i class="material-icons sidebar-material-icons">inbox</i>
                 
-                    أرشيف
+                    Archives
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
@@ -543,6 +583,26 @@
     
 
     <!-- Pages  -->
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">loyalty</i>
+                
+                Tags
+            </a>
+        </li>
+        
     
 
     <!-- Article Number  -->
@@ -570,7 +630,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            سمة - Material
+            Theme - Material
             <span class="sidebar-badge badge-circle">i</span>
         </div>
     </a>
@@ -694,11 +754,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import JS File -->
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
 
 
 
-    <script>lsloader.load("js_js","/js/js.min.js?LT4t6iE6m8TO1BLGGiNJqA==", true)</script>
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
 
 
 
@@ -732,7 +792,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+
+   
 
 
 
@@ -768,6 +833,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Bing Background -->
 
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?null');
+    });
+</script>
+
 
 <script type="text/ls-javascript" id="lazy-load">
     // Offer LazyLoad
@@ -793,7 +864,7 @@ It will not impact the appearance and can give developers a lot of support :)
     var copyrightNow = new Date().getFullYear();
     var textContent = document.querySelector('span[year]')
 
-    copyrightSince = 0000;
+    copyrightSince = 2017;
     if (copyrightSince === copyrightNow||copyrightSince === 0000) {
         textContent.textContent = copyrightNow
     } else {
