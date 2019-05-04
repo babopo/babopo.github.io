@@ -9,7 +9,7 @@
   <title>Windows下配置Hexo+GitHub博客基本步骤及遇到的问题 | Limbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="初衷是想找一个成本低廉又能保存一些技术学习笔记的地方，免费的OneNote对代码输入非常不友好，因此想到这样一个折中的搭建个人博客的方法，hexo用于搭建静态博客非常方便，同时能使用markdown编辑文章，而GitHub的门槛也非常低，网上教程也很多，步骤和自己遇到的一些问题如下：">
-<meta name="keywords" content="git,blog,hexo">
+<meta name="keywords" content="blog,hexo,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下配置Hexo+GitHub博客基本步骤及遇到的问题">
 <meta property="og:url" content="limbotech.top/2017/04/14/Windows下配置Hexo-GitHub博客基本步骤及遇到的问题/index.html">
@@ -238,7 +238,7 @@
 <h3 id="跟帖及留言"><a href="#跟帖及留言" class="headerlink" title="跟帖及留言"></a>跟帖及留言</h3><p>添加评论以及留言的功能，的功能，按照<a href="http://lawlite.me/" target="_blank" rel="noopener">lawlite</a>的方法并没有成功，因此改用来必力的跟帖</p>
 <p>从来比力网站获取web代码后，在themes\yilia\layout\ _partial下的article.ejs最后添加即可</p>
 <p>例如：</p>
-<p></p><p class="code-caption" data-lang="html" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">post.comments</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"XXXXXXXXX"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">   (function(d, s) &#123;</span></span><br><span class="line"><span class="undefined">       var j, e = d.getElementsByTagName(s)[0];</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">       if (typeof LivereTower === 'function') &#123; return; &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">       j = d.createElement(s);</span></span><br><span class="line"><span class="undefined">       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';</span></span><br><span class="line"><span class="undefined">       j.async = true;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">       e.parentNode.insertBefore(j, e);</span></span><br><span class="line"><span class="undefined">   &#125;)(document, 'script');</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> 为正常使用来必力评论功能请激活JavaScript<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+<p></p><p class="code-caption" data-lang="html" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">post.comments</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"XXXXXXXXX"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">   (<span class="function"><span class="keyword">function</span><span class="params">(d, s)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">       <span class="keyword">var</span> j, e = d.getElementsByTagName(s)[<span class="number">0</span>];</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">       <span class="keyword">if</span> (<span class="keyword">typeof</span> LivereTower === <span class="string">'function'</span>) &#123; <span class="keyword">return</span>; &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">       j = d.createElement(s);</span></span><br><span class="line"><span class="actionscript">       j.src = <span class="string">'https://cdn-city.livere.com/js/embed.dist.js'</span>;</span></span><br><span class="line"><span class="actionscript">       j.async = <span class="literal">true</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">       e.parentNode.insertBefore(j, e);</span></span><br><span class="line"><span class="javascript">   &#125;)(<span class="built_in">document</span>, <span class="string">'script'</span>);</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span> 为正常使用来必力评论功能请激活JavaScript<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure><p></p>
 <p>最外层的标签可以取消在主页和控制文章中显示跟帖</p>
 <h3 id="网站访问量功能"><a href="#网站访问量功能" class="headerlink" title="网站访问量功能"></a>网站访问量功能</h3><p>在<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>获取代码后放入themes\yilia\layout\ _partial下的footer.ejs中即可</p>
 <h3 id="在文章中插入音乐"><a href="#在文章中插入音乐" class="headerlink" title="在文章中插入音乐"></a>在文章中插入音乐</h3><p>由于是在github上搭建的博客，直接从网易云获取的外链不支持https，从知乎搜索到一个解决办法</p>
@@ -262,15 +262,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -513,11 +513,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">font-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,6 +541,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
               </li>
              
@@ -537,27 +553,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">

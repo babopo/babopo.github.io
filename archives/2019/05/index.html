@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="limbotech.top">
-  <title>Git使用学习笔记 | Limbo</title>
+  <title>Archives: 2019/5 | Limbo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大部分内容来自廖雪峰的博客及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10">
-<meta name="keywords" content="git">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git使用学习笔记">
-<meta property="og:url" content="limbotech.top/2017/04/16/Git使用学习笔记/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Limbo">
+<meta property="og:url" content="limbotech.top/archives/2019/05/index.html">
 <meta property="og:site_name" content="Limbo">
-<meta property="og:description" content="大部分内容来自廖雪峰的博客及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10">
 <meta property="og:locale" content="zn-Hans">
-<meta property="og:updated_time" content="2017-04-29T03:27:39.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git使用学习笔记">
-<meta name="twitter:description" content="大部分内容来自廖雪峰的博客及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10">
+<meta name="twitter:title" content="Limbo">
   
     <link rel="alternative" href="/atom.xml" title="Limbo" type="application/atom+xml">
   
@@ -168,255 +163,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git使用学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Git使用学习笔记
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/05/04/前端学习week1/" class="archive-article-date">
+  	<time datetime="2019-05-04T01:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/05/04/前端学习week1/">前端学习week1</a>
     </h1>
   
 
-        
-        <a href="/2017/04/16/Git使用学习笔记/" class="archive-article-date">
-  	<time datetime="2017-04-16T01:28:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <script src="\assets\js\APlayer.min.js"> </script><p>大部分内容来自<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的博客</a>及网络搜索，以在Github上托管代码为目的，使用环境为Windows 10</p>
-<a id="more"></a>
-<p>安装过程略</p>
-<h3 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h3><p>在希望进行版本控制的目录下</p>
-<ul>
-<li>创建仓库</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>添加文件至暂缓区</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt; <span class="comment">#添加指定文件</span></span><br><span class="line">git add . <span class="comment">#添加所有变化的文件，但不包括删除的</span></span><br><span class="line">git add -u <span class="comment">#只监控已被add的文件</span></span><br><span class="line">git add -A <span class="comment">#上两个命令的集合</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>从暂缓区提交至仓库</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"xxx"</span> <span class="comment">#引号内为修改备注</span></span><br><span class="line">git commit <span class="comment">#会直接在控制台用vi打开编辑文档，不添加修改信息的话commit会失败！</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>查看工作区下修改文件的状态</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status <span class="comment">#查看是否有文件被修改</span></span><br><span class="line">git diff &lt;filename&gt; <span class="comment">#查看修改内容</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li><p>版本控制</p>
-<ul>
-<li>查看日志</li>
-</ul>
-</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment">#查看提交日志</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline <span class="comment">#仅显示SHA1值和commit信息</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>版本回退</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^ <span class="comment">#回退至上一个版本</span></span><br></pre></td></tr></table></figure><p></p>
-<pre><code>原理为改变HEAD指针的指向，通过添加^的个数来指向不同的版本，个数较多可写为HEAD~num，也可以用SHA1值的前几位直接指定
-</code></pre><ul>
-<li>查看命令记录</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>撤销修改</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;filename&gt; <span class="comment">#只在工作区的修改，未提交至暂存区，可以还原被删除的文件</span></span><br><span class="line">git reset HEAD &lt;filename&gt; <span class="comment">#撤销暂存区的修改，放回工作区，注意没有 --hard参数</span></span><br></pre></td></tr></table></figure><p></p>
-<pre><code>应当注意`git reset HEAD &lt;filename&gt;` 指令工作区保留的是add之前对工作区的修改，如果在这之后对文件有修改，执行`git status`能看到有对文件的修改
-</code></pre><ul>
-<li>删除文件</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;filename&gt;</span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li><p>推送至github远程仓库</p>
-<ol>
-<li><p>添加ssh公钥</p>
-</li>
-<li><p>在github上创建repo后根据提示在本地已建立好的仓库输入对应指令</p>
-</li>
-</ol>
-</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:XXXXXXX/XXX.git</span><br></pre></td></tr></table></figure><p></p>
-<ol start="3">
-<li>在本地 <code>git commit</code>之后<code>git push origin master #本地master推送至远程origin地址</code>可推送至远程仓库</li>
-</ol>
-<ul>
-<li><p>分支管理</p>
-<p>通过创建其他分支，对新的分支的修改不影响原有<strong>master</strong>分支，新分支工作完成后再合并</p>
-<ul>
-<li>创建新分支</li>
-</ul>
-</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b xxx <span class="comment">#创建新分支并切换至该分支 -b参数表示新建</span></span><br><span class="line">git branch <span class="comment">#查看当前分支</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>合并分支</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge xxx <span class="comment">##切换回master分支后将xxx分支的工作合并进来 </span></span><br><span class="line">git branch <span class="_">-d</span> xxx <span class="comment">#删除xxx分支，未合并的分支需强制删除，此时使用-D参数</span></span><br><span class="line">git <span class="built_in">log</span> --graph <span class="comment">#查看分支合并图</span></span><br><span class="line">git merge --no-ff -m <span class="string">"xxxxx"</span> xxx <span class="comment">#--no-ff表示禁用fast forward模式，带此参数可为merge添加commit</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>工作封存</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="comment">#将当前分支所做的工作储存，恢复到上次commit的状态，此时可任意切换合并分支操作</span></span><br><span class="line">git stash list <span class="comment">#查看</span></span><br><span class="line">git stash apply xxxx <span class="comment">#恢复</span></span><br><span class="line">git stash drop <span class="comment">#删除</span></span><br><span class="line">git stash pop <span class="comment">#上两个命令的综合</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>查看远程仓库信息</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>标签管理</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;name&gt; <span class="comment">#-d删除</span></span><br><span class="line">git tag commit_id</span><br><span class="line">git tag <span class="comment">#查看</span></span><br><span class="line">git show &lt;tagname&gt; <span class="comment">#查看标签信息</span></span><br><span class="line">git push orign &lt;tagname&gt; <span class="comment">#推送标签至远程</span></span><br><span class="line">git push origin :refs/tags/&lt;tagname&gt; <span class="comment">#远程删除标签</span></span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li><p>忽略文件</p>
-<p>目录下创建<code>.gitignore</code>文件，将不需要提交的文件写入并将<code>.gitignore</code>提交即可</p>
-<p><code>git add -f &lt;filename&gt;</code>可强制提交</p>
-</li>
-</ul>
-<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><ul>
-<li>远程仓库非空，连接本地仓库后不能直接push，可以输入-f参数强制push</li>
-</ul>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master <span class="_">-f</span>  <span class="comment">#warning: 会完全覆盖远程仓库，包括之前的commit</span></span><br></pre></td></tr></table></figure><p></p>
-<p>  ​</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">font-end</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:limbotech.top/2017/04/16/Git使用学习笔记/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/18/验证码识别技术研究/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          验证码识别研究
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/04/14/python-opencv/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Windows下Pycharm+Anaconda+Opencv图像处理环境配置</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
+    
 
 
-
-<!-- 网易云跟帖 -->
-<!-- 来必力City版安装代码 -->
-
-<div id="lv-container" data-id="city" data-uid="MTAyMC8yODI0Mi80ODE0">
-  <script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-
-<!-- City版安装代码已完成 -->
           </div>
         </div>
       </div>
@@ -449,8 +251,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -540,11 +342,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">font-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,6 +370,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello world</a>
               </li>
              
@@ -564,27 +382,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sublime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kindle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rss</a>
               </li>
              
               <li class="article-tag-list-item">
