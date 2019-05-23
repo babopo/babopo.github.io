@@ -64,7 +64,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="本周开始学习css的布局基础知识，基本视觉格式化从盒模型入手，介绍了块元素的盒模型及基本概念，水平方向和垂直方向的规则和要点很多，注意水平方向的width总和和垂直方向的margin折叠学习这些内容能方便预测页面中的基本布局，之后学习了背景图片的一些技巧和sprite图应用，接着是基本布局之一的定位，最后是行内元素的结构，注意行内框，行框，line-height的关系，内容很多很杂，需要梳理。">
-    <meta name="keywords" content="null,front-end,css">
+    <meta name="keywords" content="null,css,front-end">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -250,11 +250,11 @@
     <meta property="og:title" content="前端学习week3 | Limbo">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="本周开始学习css的布局基础知识，基本视觉格式化从盒模型入手，介绍了块元素的盒模型及基本概念，水平方向和垂直方向的规则和要点很多，注意水平方向的width总和和垂直方向的margin折叠学习这些内容能方便预测页面中的基本布局，之后学习了背景图片的一些技巧和sprite图应用，接着是基本布局之一的定位，最后是行内元素的结构，注意行内框，行框，line-height的关系，内容很多很杂，需要梳理。">
-    <meta property="og:article:tag" content="front-end"> <meta property="og:article:tag" content="css"> 
+    <meta property="og:article:tag" content="css"> <meta property="og:article:tag" content="front-end"> 
 
     
         <meta property="article:published_time" content="Sat May 18 2019 12:01:03 GMT+0800">
-        <meta property="article:modified_time" content="Mon May 20 2019 11:30:06 GMT+0800">
+        <meta property="article:modified_time" content="Wed May 22 2019 16:26:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/05/18/前端学习week3/index.html",
     "headline": "前端学习week3",
     "datePublished": "Sat May 18 2019 12:01:03 GMT+0800",
-    "dateModified": "Mon May 20 2019 11:30:06 GMT+0800",
+    "dateModified": "Wed May 22 2019 16:26:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -295,7 +295,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",front-end,cssnull",
+    "keywords": ",css,front-endnull",
     "description": "本周开始学习css的布局基础知识，基本视觉格式化从盒模型入手，介绍了块元素的盒模型及基本概念，水平方向和垂直方向的规则和要点很多，注意水平方向的width总和和垂直方向的margin折叠学习这些内容能方便预测页面中的基本布局，之后学习了背景图片的一些技巧和sprite图应用，接着是基本布局之一的定位，最后是行内元素的结构，注意行内框，行框，line-height的关系，内容很多很杂，需要梳理。",
 }
 </script>
@@ -745,6 +745,13 @@
 </li>
 <li><p>替换元素设置为<code>display:inline</code>无效，会被当做<code>inline-block</code></p>
 </li>
+<li><p>inline-block的基线会影响布局，其基线取决于元素本身的特性，在该元素中没有行内子元素（注意是DOM树的子元素，有块子元素不算或者块子元素中有行元素这个行元素算）的时候或者overflow不为visible，该inline-block的基线为margin-bottom的下边界。否则，以该元素中最后一个行框子元素的基线为该元素的基线。</p>
+<ul>
+<li><p>假设两个inline-block并列，第二个又嵌套了一个inline-blok，会怎样布局</p>
+<p>解答：按照上面的规则，inline-block的基线为margin-box的底部，第二个inline-block的基线变成被嵌套的inline-block的基线，所以第一个和被嵌套的底端对齐。</p>
+</li>
+</ul>
+</li>
 </ul>
 <h4 id="匿名盒子"><a href="#匿名盒子" class="headerlink" title="匿名盒子"></a>匿名盒子</h4><p>匿名文本看作被包含在匿名盒中继承父元素属性</p>
 <p>匿名块盒子</p>
@@ -832,6 +839,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/05/23/前端学习week4/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -931,7 +946,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
