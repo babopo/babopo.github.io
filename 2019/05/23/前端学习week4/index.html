@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Thu May 23 2019 22:27:05 GMT+0800">
-        <meta property="article:modified_time" content="Thu May 23 2019 22:37:05 GMT+0800">
+        <meta property="article:modified_time" content="Wed May 29 2019 09:27:29 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/05/23/前端学习week4/index.html",
     "headline": "前端学习week4",
     "datePublished": "Thu May 23 2019 22:27:05 GMT+0800",
-    "dateModified": "Thu May 23 2019 22:37:05 GMT+0800",
+    "dateModified": "Wed May 29 2019 09:27:29 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -538,7 +538,7 @@
     vertical-align: middle;
 }
 </code></pre>
-<pre><code>原理：画个图就明白了
+<pre><code>原理：画个图就明白了，`vertical-align: middle`的意思是使元素的中部与父元素的基线上的x中部对齐
 </code></pre><ul>
 <li>可以利用表格的对齐特性</li>
 </ul>
@@ -699,18 +699,35 @@ bottom: 0;
 <li><p>counters(name, “.”)</p>
 <p>老计数器追加新计数器，并用 . 连接</p>
 </li>
-<li><p>计数器有作用域</p>
+<li><p>计数器有作用域，counter-reset确定了计数器的作用域</p>
 </li>
 </ul>
 <h4 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h4><ul>
 <li><p>p标签内不能写块元素，遇到块元素标签直接闭合</p>
 </li>
 <li><p>行内元素不能包含块元素，也会直接闭合</p>
+<ul>
+<li>这是旧标准的说法，新的html5中删去了block和inline的概念，能否嵌套应当查看元素的categories和content model</li>
+</ul>
 </li>
 <li><p>伪元素生成的内容无法选中</p>
 </li>
 <li><p><code>all: initial</code>将所有属性还原默认值</p>
 <p>例：用于去除<code>inline-block</code>间的间隙</p>
+</li>
+<li><pre><code class="css">html {
+box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+</code></pre>
+<p>将所有元素设置为border-box的优化写法</p>
+</li>
+<li><p>opacity不继承</p>
 </li>
 </ul>
 
