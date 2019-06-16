@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sat Jun 01 2019 16:51:07 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jun 04 2019 22:53:03 GMT+0800">
+        <meta property="article:modified_time" content="Thu Jun 13 2019 10:01:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/06/01/前端学习week5/index.html",
     "headline": "前端学习week5",
     "datePublished": "Sat Jun 01 2019 16:51:07 GMT+0800",
-    "dateModified": "Tue Jun 04 2019 22:53:03 GMT+0800",
+    "dateModified": "Thu Jun 13 2019 10:01:16 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -560,7 +560,7 @@
 </ul>
 <h4 id="pseudo-class-amp-pseudo-element"><a href="#pseudo-class-amp-pseudo-element" class="headerlink" title="pseudo-class&amp;pseudo-element"></a>pseudo-class&amp;pseudo-element</h4><ul>
 <li><code>:target</code>伪类：url中含有元素的id的值时选中</li>
-<li><code>:not()</code>伪类中不能出现层级选择器即<code>&gt; ~ +</code>以及空格等  <strong>且not伪类在选择器中权重为0</strong></li>
+<li><code>:not()</code>伪类中不能出现层级选择器即<code>&gt; ~ +</code>以及空格等  <strong>且not伪类在选择器中权重为0，但是not伪类里面的东西参与优先级</strong></li>
 <li><code>::first-letter</code>伪元素会选中第一个文字字符前的所有符号字符</li>
 </ul>
 <h4 id="flexible-box-layout"><a href="#flexible-box-layout" class="headerlink" title="flexible box layout"></a>flexible box layout</h4><ul>
@@ -579,14 +579,14 @@
 <li>space-around/space-between</li>
 </ul>
 </li>
-<li>align-items  在cross-axis上对齐<ul>
+<li>align-items  在cross-axis上对齐  <strong>子元素本身在交叉轴的对齐</strong><ul>
 <li>flex-start/flex-end</li>
 <li>center</li>
 <li>baseline</li>
-<li>stretch  默认值</li>
+<li>stretch  默认值 设置为其他值时则失效</li>
 </ul>
 </li>
-<li>align-content 设置行间的空间，与justify-content值相同，只有一行时无效</li>
+<li>align-content 设置行间的空间，与justify-content值相同，只有一行时无效  <strong>子元素整体在交叉轴对齐</strong></li>
 <li>flex-wrap  设置cross-axis   发生折行 shrink失效 ，折行时不会发生外边距折叠</li>
 <li>flex-flow ： direction | wrap</li>
 </ul>
@@ -595,7 +595,7 @@
 <ul>
 <li><p>flex-basis</p>
 <p>对应行排列时的width或列排列时的height，比较灵活，item的理想大小</p>
-<p>content &lt; width &lt; flex-basis (limited by max|min-width)   优先级</p>
+<p>content &lt; width &lt; flex-basis (limited by max|min-width)   <strong>优先级</strong></p>
 </li>
 <li><p>flex-grow: 对container剩余空间的分配拉伸，若所有item中的值之和不超过1，那还会剩下1减去和的比例部分未分配</p>
 </li>
@@ -838,7 +838,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
