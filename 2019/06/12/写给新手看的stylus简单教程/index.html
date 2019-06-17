@@ -63,8 +63,8 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content>
-    <meta name="keywords" content="null">
+    <meta name="description" itemprop="description" content="​    学css那肯定就离不开预处理，预处理的作用相当于在css上面再套了一层壳，用更简洁更高级的方式来写样式，剩下的就交给编译器编译成css代码，但要记住预处理只不过是工具而已，能不能写好是建立在css的基本功学扎实的基础之上的，特别是进入css3时代，原生css即能方便实现的功能越来越多，预处理显得又不那么重要了，但是后面学习使用框架时似乎能用到，那么还是好好学习一下，这篇文章的是写给像我一样刚接触css时看到预处理器的文档一脸懵逼不知道如何下手的同学，顺便记录一些能用上的奇技淫巧。">
+    <meta name="keywords" content=",css,stylus">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -249,12 +249,12 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="写给新手看的stylus简单教程 | Limbo">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content>
-    
+    <meta property="og:description" content="​    学css那肯定就离不开预处理，预处理的作用相当于在css上面再套了一层壳，用更简洁更高级的方式来写样式，剩下的就交给编译器编译成css代码，但要记住预处理只不过是工具而已，能不能写好是建立在css的基本功学扎实的基础之上的，特别是进入css3时代，原生css即能方便实现的功能越来越多，预处理显得又不那么重要了，但是后面学习使用框架时似乎能用到，那么还是好好学习一下，这篇文章的是写给像我一样刚接触css时看到预处理器的文档一脸懵逼不知道如何下手的同学，顺便记录一些能用上的奇技淫巧。">
+    <meta property="og:article:tag" content="css"> <meta property="og:article:tag" content="stylus"> 
 
     
         <meta property="article:published_time" content="Wed Jun 12 2019 23:05:53 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jun 12 2019 23:10:27 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jun 17 2019 23:08:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/06/12/写给新手看的stylus简单教程/index.html",
     "headline": "写给新手看的stylus简单教程",
     "datePublished": "Wed Jun 12 2019 23:05:53 GMT+0800",
-    "dateModified": "Wed Jun 12 2019 23:10:27 GMT+0800",
+    "dateModified": "Mon Jun 17 2019 23:08:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -295,8 +295,8 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "null",
-    "description": "",
+    "keywords": ",css,stylus",
+    "description": "​    学css那肯定就离不开预处理，预处理的作用相当于在css上面再套了一层壳，用更简洁更高级的方式来写样式，剩下的就交给编译器编译成css代码，但要记住预处理只不过是工具而已，能不能写好是建立在css的基本功学扎实的基础之上的，特别是进入css3时代，原生css即能方便实现的功能越来越多，预处理显得又不那么重要了，但是后面学习使用框架时似乎能用到，那么还是好好学习一下，这篇文章的是写给像我一样刚接触css时看到预处理器的文档一脸懵逼不知道如何下手的同学，顺便记录一些能用上的奇技淫巧。",
 }
 </script>
 
@@ -369,7 +369,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环"><span class="post-toc-number">1.</span> <span class="post-toc-text">循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环生成多个选择器"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">循环生成多个选择器</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#嵌套"><span class="post-toc-number">1.</span> <span class="post-toc-text">嵌套</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#amp"><span class="post-toc-number">2.</span> <span class="post-toc-text">&amp;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mixin"><span class="post-toc-number">3.</span> <span class="post-toc-text">Mixin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#extends"><span class="post-toc-number">4.</span> <span class="post-toc-text">@extends</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环"><span class="post-toc-number">5.</span> <span class="post-toc-text">循环</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环生成多个选择器"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">循环生成多个选择器</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -450,6 +450,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/css/">css</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/stylus/">stylus</a>
+    </li></ul>
+    
 
     <!-- Share -->
     
@@ -491,7 +500,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Limbo&title=写给新手看的stylus简单教程&summary=null&pics=babopo.github.io/img/favicon.png&url=babopo.github.io/2019/06/12/写给新手看的stylus简单教程/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Limbo&title=写给新手看的stylus简单教程&summary=&pics=babopo.github.io/img/favicon.png&url=babopo.github.io/2019/06/12/写给新手看的stylus简单教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -510,15 +519,26 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <script src="\assets\js\APlayer.min.js"> </script><a id="more"></a>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="循环生成多个选择器"><a href="#循环生成多个选择器" class="headerlink" title="循环生成多个选择器"></a>循环生成多个选择器</h4><p></p><p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="css">for $num in (1..100)
+        <p>​    学css那肯定就离不开预处理，预处理的作用相当于在css上面再套了一层壳，用更简洁更高级的方式来写样式，剩下的就交给编译器编译成css代码，但要记住预处理只不过是工具而已，能不能写好是建立在css的基本功学扎实的基础之上的，特别是进入css3时代，原生css即能方便实现的功能越来越多，预处理显得又不那么重要了，但是后面学习使用框架时似乎能用到，那么还是好好学习一下，这篇文章的是写给像我一样刚接触css时看到预处理器的文档一脸懵逼不知道如何下手的同学，顺便记录一些能用上的奇技淫巧。</p>
+<a id="more"></a>
+
+<p>这里选择了相对冷门的stylus，因为写起来不需要花括号，分号甚至不需要声明的冒号，写起来相当优雅<del>简单省事</del></p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>嵌套是预处理器最有特色的东西了，在stylus中是利用缩进实现的层层嵌套，编译时会从最外层的选择器一直到最里层，但要注意的是嵌套随然好用，但是最好不要超过2层，因为css中尽量不要体现html中的结构</p>
+<h3 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h3><p>这个符号相当重要，它是缩进使用的，代表其被嵌套的父选择器，其实就是一种省略的写法。</p>
+<p>其实有了嵌套和&amp;,就已经可以完成大部分的工作了。接下来算是一些高级点的用法</p>
+<h3 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h3><p>混合，其实就是其他编程语言中的函数，在需要调用的地方打上函数名，编译时会自动加入自定义的内容</p>
+<h3 id="extends"><a href="#extends" class="headerlink" title="@extends"></a>@extends</h3><p>在其他选择器下使用<code>@extend [name]</code>可以将[name]选择器下的所有属性都加入。</p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="循环生成多个选择器"><a href="#循环生成多个选择器" class="headerlink" title="循环生成多个选择器"></a>循环生成多个选择器</h4><p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
+``` css 
+for $num in (1..100)
     .a-{$num}
         color red
-</code></pre>
+```
+
 <p>以上代码生成</p>
-<p></p><p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="css">.a-1 {
+<p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
+``` css 
+.a-1 {
   color: #f00;
 }
 .a-2 {
@@ -527,7 +547,8 @@
 .a-3 {
   color: #f00;
 }
-</code></pre>
+```
+
 <p>通过这种方式我们可以快捷生成多个用数字排序的选择器</p>
 <p>主要有一下几个点：</p>
 <ul>
