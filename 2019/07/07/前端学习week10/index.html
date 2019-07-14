@@ -65,7 +65,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="​    本周主要学习了数组和对象这两种数据结构，在js中，除了集中原始值，其他数据结构都能视作对象，另外简单介绍了一下链表，js中的链表结构比较简单，操作也很方便。需要理解的是对象标识符指向对象的存储地址(这也比其他语言简单很多)，另外就是js数组和字符串的一些方法函数，需要在使用中加强记忆。
 ​    leetcode刷到了100题，熟练度确实有点用，应该抽出点时间review，下周争取130+，另外看完算法的排序部分">
-    <meta name="keywords" content=",javascript,front-end">
+    <meta name="keywords" content=",front-end,javascript">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -252,11 +252,11 @@
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="​    本周主要学习了数组和对象这两种数据结构，在js中，除了集中原始值，其他数据结构都能视作对象，另外简单介绍了一下链表，js中的链表结构比较简单，操作也很方便。需要理解的是对象标识符指向对象的存储地址(这也比其他语言简单很多)，另外就是js数组和字符串的一些方法函数，需要在使用中加强记忆。
 ​    leetcode刷到了100题，熟练度确实有点用，应该抽出点时间review，下周争取130+，另外看完算法的排序部分">
-    <meta property="og:article:tag" content="javascript"> <meta property="og:article:tag" content="front-end"> 
+    <meta property="og:article:tag" content="front-end"> <meta property="og:article:tag" content="javascript"> 
 
     
         <meta property="article:published_time" content="Sun Jul 07 2019 20:35:01 GMT+0800">
-        <meta property="article:modified_time" content="Sun Jul 07 2019 21:25:09 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jul 09 2019 09:53:33 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -279,7 +279,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/07/07/前端学习week10/index.html",
     "headline": "前端学习week10",
     "datePublished": "Sun Jul 07 2019 20:35:01 GMT+0800",
-    "dateModified": "Sun Jul 07 2019 21:25:09 GMT+0800",
+    "dateModified": "Tue Jul 09 2019 09:53:33 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -297,7 +297,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",javascript,front-end",
+    "keywords": ",front-end,javascript",
     "description": "​    本周主要学习了数组和对象这两种数据结构，在js中，除了集中原始值，其他数据结构都能视作对象，另外简单介绍了一下链表，js中的链表结构比较简单，操作也很方便。需要理解的是对象标识符指向对象的存储地址(这也比其他语言简单很多)，另外就是js数组和字符串的一些方法函数，需要在使用中加强记忆。
 ​    leetcode刷到了100题，熟练度确实有点用，应该抽出点时间review，下周争取130+，另外看完算法的排序部分",
 }
@@ -592,20 +592,26 @@
 <li>可以给形参赋值作为缺省的默认值</li>
 </ul>
 <h4 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h4><ul>
-<li>递归四条准则<ul>
+<li><p>递归四条准则</p>
+<ul>
 <li>基准情形</li>
 <li>不断推进</li>
 <li>设计法则</li>
 <li>合成效益法则</li>
 </ul>
+<p>使用递归时注意递归过程中<strong>重复计算</strong>的问题，可以储存各计算结果当遇到这个计算时直接返回值</p>
+<p>不要使用全局变量(除非刻意要用)</p>
+<p>注意返回新对象还是在原对象上操作的一致性</p>
 </li>
-<li>document.write()<ul>
+<li><p>document.write()</p>
+<ul>
 <li>向文档解析流写入内容</li>
 <li>文档一旦解析完成<code>&lt;/html&gt;</code>，解析流关闭</li>
 <li>重新write会导致重新打开一个解析流，之前的内容完全覆盖</li>
 </ul>
 </li>
-<li>排序算法<ul>
+<li><p>排序算法</p>
+<ul>
 <li>希尔shell排序<ul>
 <li>希尔排序的思想是 将原数组中间隔h的子数组使用插入排序，循环减少h至h=1即排序完成</li>
 <li>实际是插入排序的优化版，能将离本来位置较远的元素更快地移动到本来的位置</li>
@@ -659,6 +665,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/07/14/前端学习week11/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -758,7 +772,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
