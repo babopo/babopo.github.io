@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Jul 14 2019 22:47:24 GMT+0800">
-        <meta property="article:modified_time" content="Sun Jul 14 2019 22:54:39 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jul 16 2019 11:07:18 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/07/14/前端学习week11/index.html",
     "headline": "前端学习week11",
     "datePublished": "Sun Jul 14 2019 22:47:24 GMT+0800",
-    "dateModified": "Sun Jul 14 2019 22:54:39 GMT+0800",
+    "dateModified": "Tue Jul 16 2019 11:07:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -539,6 +539,7 @@
 <ul>
 <li>一个函数参数， 只是对各元素进行操作，没有返回值，<code>forEach</code>不直接改变调用它的对象，但是对象可能会被<code>callback</code>改变</li>
 <li>只遍历存在的项，empty不遍历</li>
+<li>除了抛出异常无法阻止forEach</li>
 </ul>
 </li>
 <li><p>filter</p>
@@ -572,9 +573,28 @@
 <li><p>函数值参数可简写为箭头函数</p>
 <ul>
 <li>只有一个参数时可以省略括号</li>
-<li>只有一个return语句时可省略return和花括号`</li>
+<li>只有一个return语句时可省略return和花括号</li>
 </ul>
 </li>
+<li><p>函数的方法：</p>
+<ul>
+<li><code>bind(null, xx,xx)</code>，返回一个新的函数，相当于在原函数内给对应位置的参数附值绑定，返回的新函数就没有这个形参了，null后紧接着原函数的第一个参数，以此类推</li>
+</ul>
+</li>
+</ul>
+<p class="code-caption" data-lang="js" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
+``` js 
+function bind(f) {
+    var fixedArgs = Array.from(arguments).slice(1)
+    return function() {
+        var args = Array.from(arguments)
+        return f.apply(null, fixedArgs.concat(args))
+    }
+}
+```
+
+<ul>
+<li><code>apply</code>方法，用数组来指定函数的参数</li>
 </ul>
 <h5 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h5><p>Javascript Object Notation</p>
 <ul>
@@ -587,18 +607,21 @@
 <h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><ul>
 <li>完全二叉树</li>
 <li>前pre/中in/后序post遍历 traversal</li>
-<li>排序二叉树<ul>
+<li>排序二叉树BST<ul>
 <li>结点左结点的值小，右结点的值大</li>
-<li>中序遍历，得到有序序列    是一种<strong>插入排序</strong></li>
+<li>中序遍历，得到有序序列    是一种<strong>插入排序</strong>，利用这点可以很快地判断是否为BST，是BST很重要的一个性质</li>
 <li>添加结点</li>
 <li>删除结点</li>
 </ul>
 </li>
 </ul>
 <h4 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h4><ul>
-<li>toString方法可以将数字转为2-36进制的字符串</li>
-<li>sort()方法默认情况下按照升序排列数组项，sort()方法会调用toString()转型方法，然后比较得到的字符串，即使我们比较的是数字，他也会<strong>把数字转为字符串以后再排序</strong></li>
-<li>关于动态规划(dynamic programming)的理解<ul>
+<li><p>toString方法可以将数字转为2-36进制的字符串</p>
+</li>
+<li><p>sort()方法默认情况下按照升序排列数组项，sort()方法会调用toString()转型方法，然后比较得到的字符串，即使我们比较的是数字，他也会<strong>把数字转为字符串以后再排序</strong></p>
+</li>
+<li><p>关于动态规划(dynamic programming)的理解</p>
+<ul>
 <li>每个阶段只有一个状态-&gt;递推；</li>
 <li>每个阶段的最优状态都是由上一个阶段的最优状态得到的-&gt;贪心；</li>
 <li>每个阶段的最优状态是由之前所有阶段的状态的组合得到的-&gt;搜索；</li>
@@ -612,14 +635,22 @@
 </li>
 </ul>
 </li>
-<li>归并排序<ul>
+<li><p>归并排序</p>
+<ul>
 <li>基本思想是将数组递归地分成两半分别排序，再将结果归并</li>
 <li>优化： <ul>
 <li>小规模子数组可以使用插入排序</li>
 <li>增加一个判断：<code>arr[mid] &lt; arr[mid + 1]</code>时可认为数组已经有序，跳过merge，直接连接</li>
 </ul>
 </li>
+<li>一般是自顶向下的方法，也可自底向上两两归并，四四归并。。。。这种方式适合处理链表原地排序</li>
 </ul>
+</li>
+<li><p>数组的includes方法可以正确判断NaN，indexOf不行</p>
+</li>
+<li><p><code>Array.from()将类数组对象转为数组</code></p>
+</li>
+<li><p><strong>arguments</strong> 是一个对应于传递给函数的参数的<strong>类数组对象</strong></p>
 </li>
 </ul>
 
@@ -666,6 +697,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/07/21/前端学习week12/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -765,7 +804,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
