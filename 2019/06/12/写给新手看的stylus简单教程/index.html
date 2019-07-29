@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Wed Jun 12 2019 23:05:53 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jun 18 2019 11:28:45 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jul 29 2019 11:19:03 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/06/12/写给新手看的stylus简单教程/index.html",
     "headline": "写给新手看的stylus简单教程",
     "datePublished": "Wed Jun 12 2019 23:05:53 GMT+0800",
-    "dateModified": "Tue Jun 18 2019 11:28:45 GMT+0800",
+    "dateModified": "Mon Jul 29 2019 11:19:03 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -528,17 +528,16 @@
 <p>其实有了嵌套和&amp;,就已经可以完成大部分的工作了。接下来算是一些高级点的用法</p>
 <h3 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h3><p>混合，其实就是其他编程语言中的函数，在需要调用的地方打上函数名，编译时会自动加入自定义的内容</p>
 <h3 id="extends"><a href="#extends" class="headerlink" title="@extends"></a>@extends</h3><p>在其他选择器下使用<code>@extend [name]</code>可以将[name]选择器下的所有属性都加入。</p>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="循环生成多个选择器"><a href="#循环生成多个选择器" class="headerlink" title="循环生成多个选择器"></a>循环生成多个选择器</h4><p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
-``` css 
-for $num in (1..100)
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="循环生成多个选择器"><a href="#循环生成多个选择器" class="headerlink" title="循环生成多个选择器"></a>循环生成多个选择器</h4><ul>
+<li><pre><code class="scss">for $num in (1..100)
     .a-{$num}
         color red
-```
-
+&lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
 <p>以上代码生成</p>
-<p class="code-caption" data-lang="css" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
-``` css 
-.a-1 {
+<ul>
+<li><pre><code class="css">.a-1 {
   color: #f00;
 }
 .a-2 {
@@ -546,9 +545,9 @@ for $num in (1..100)
 }
 .a-3 {
   color: #f00;
-}
-```
-
+}</code></pre>
+</li>
+</ul>
 <p>通过这种方式我们可以快捷生成多个用数字排序的选择器</p>
 <p>主要有一下几个点：</p>
 <ul>
