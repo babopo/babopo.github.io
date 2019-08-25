@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Aug 18 2019 21:07:12 GMT+0800">
-        <meta property="article:modified_time" content="Sun Aug 18 2019 21:22:23 GMT+0800">
+        <meta property="article:modified_time" content="Sun Aug 25 2019 19:15:56 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/08/18/前端学习week16/index.html",
     "headline": "前端学习week16",
     "datePublished": "Sun Aug 18 2019 21:07:12 GMT+0800",
-    "dateModified": "Sun Aug 18 2019 21:22:23 GMT+0800",
+    "dateModified": "Sun Aug 25 2019 19:15:56 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -777,6 +777,7 @@ setTimeout(`console.log(2)`, 0)
 </li>
 <li>一句解决所有this的问题：在javascript引擎内部，obj和obj.foo储存在两个内存地址，简称为M1和M2。<strong>只有obj.foo()这样调用时，是从M1调用M2</strong>，因此this指向obj。由此可得，当不经过obj直接调用foo时，foo的this指向当前活动对象（一般是全局环境window）<ul>
 <li>数组的forEach/map/filter方法可以传入一个参数作为调用函数的this，不传则this为window</li>
+<li>对于箭头函数，<code>this</code> 关键字是由词法作用域决定的，继承外层函数的this，指向的是它当前周围作用域（简单来说是包含箭头函数的常规函数，如果没有常规函数的话就是全局对象），和闭包比较，闭包返回的函数的this是暴露在外面的，如果闭包返回的是一个箭头函数，那么this继承的是包裹函数的this，否则箭头函数的this就是window</li>
 </ul>
 </li>
 <li>进程和线程：<ul>
@@ -830,6 +831,14 @@ setTimeout(`console.log(2)`, 0)
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/08/25/前端学习week17/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -929,7 +938,7 @@ setTimeout(`console.log(2)`, 0)
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
