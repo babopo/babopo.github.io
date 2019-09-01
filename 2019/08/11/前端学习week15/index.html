@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Aug 11 2019 22:44:16 GMT+0800">
-        <meta property="article:modified_time" content="Sun Aug 11 2019 22:58:32 GMT+0800">
+        <meta property="article:modified_time" content="Mon Aug 26 2019 21:46:45 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/08/11/前端学习week15/index.html",
     "headline": "前端学习week15",
     "datePublished": "Sun Aug 11 2019 22:44:16 GMT+0800",
-    "dateModified": "Sun Aug 11 2019 22:58:32 GMT+0800",
+    "dateModified": "Mon Aug 26 2019 21:46:45 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -569,6 +569,7 @@
 <li>es6新加入的原始类型，不是普通对象，可以作为对象的<strong>独一无二</strong>属性(也是它的主要用途)<ul>
 <li>Symbol函数前不能用new，否则会报错，因为生成的是一个原始类型值不是对象</li>
 <li>Symbol函数接的参数是对这个创建的值的描述，没有任何其他作用</li>
+<li>Symbol属性不可枚举</li>
 <li>注意Symbol值作为对象属性名不能用<code>.</code>访问，因为<code>.</code>后只能接字符串，但是方括号可以接表达式<ul>
 <li>此外只能用新增的<code>Object.getOwnpropertySymbols()</code>方法来检索Symbol值属性，for-in/for-of等全都不能</li>
 </ul>
@@ -587,7 +588,10 @@
 </ul>
 </li>
 <li>给不可迭代对象或其原型增加这个属性的生成器函数可以添加自定义其迭代器，利用这个方法可以使数值类型和普通对象可迭代</li>
-<li><code>[...foo()]</code>扩展运算符可以操作所有可迭代对象，得到所有yield后的返回值，即迭代器对象的value值，并按照默认顺序读取</li>
+<li><code>[...foo()]</code>扩展运算符可以操作所有可迭代对象，得到所有yield后的返回值，即迭代器对象的value值，并按照默认顺序读取<ul>
+<li>现在扩展运算符也可操作普通对象<code>{...{a: 1}}</code>可以得到<code>{a:1}</code>，而且只能在普通对象内部使用</li>
+</ul>
+</li>
 <li>iterator是Symbol构造函数的一个属性，指向一个Symbol值，而这个Symbol值同时也是集合对象及字符串的构造函数原型属性中的属性，指向生成器函数</li>
 </ul>
 </li>
@@ -823,7 +827,7 @@ a.x = a = {1:1}
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
