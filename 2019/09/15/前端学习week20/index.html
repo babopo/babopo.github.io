@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Sep 15 2019 22:05:45 GMT+0800">
-        <meta property="article:modified_time" content="Sun Sep 15 2019 22:25:30 GMT+0800">
+        <meta property="article:modified_time" content="Mon Sep 16 2019 10:44:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/09/15/前端学习week20/index.html",
     "headline": "前端学习week20",
     "datePublished": "Sun Sep 15 2019 22:05:45 GMT+0800",
-    "dateModified": "Sun Sep 15 2019 22:25:30 GMT+0800",
+    "dateModified": "Mon Sep 16 2019 10:44:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -594,20 +594,50 @@
 <li>除了常用的函数声明和函数表达式，也可用于class中的函数声明和箭头函数</li>
 </ul>
 </li>
-<li><p>描述一下async函数的执行过程：若函数内有异步操作， 调用函数会<strong>立即</strong>返回一个挂起状态的promise对象(A)， 函数内部遇到await就立即返回，等待await后的异步操作(若接的不是一个promise对象，则会转为一个立即resolve的promise对象)执行完后再执行下一句， 最后函数的执行情况和返回值作为A的状态和value</p>
+<li><p>描述一下async函数的执行过程：若函数内有异步操作， 调用函数会<strong>立即返回</strong>一个挂起状态的promise对象(A)， 函数内部遇到await就<strong>立即返回</strong>，等待await后的异步操作(若接的不是一个promise对象，则会转为一个立即resolve的promise对象)执行完后再执行下一句， 最后函数的执行情况和返回值作为A的状态和value</p>
 <ul>
 <li><p>只要有一个await后得到了reject的promise对象，则整个函数的执行立即<strong>中断</strong>，reject状态及value传给整个函数的返回结果(无论是否有return)，除非使用try-catch处理(async函数内可以使用try-catch)或者await后有处理reject的catch调用</p>
 </li>
 <li><p>若多个异步操作间没有联系，可让异步操作并发执行提高效率</p>
 <ul>
 <li><pre><code class="js">//例
-let res = await Promise.all(promises</code></pre>
+let res = await Promise.all(promises
+&lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p><a href="https://medium.com/@bluepnume/even-with-async-await-you-probably-still-need-promises-9b259854c161" target="_blank" rel="noopener">Even with async/await, raw promises are still key to writing optimal concurrent javascript</a></p>
+</li>
+<li><p>coroutine</p>
+<ul>
+<li><pre><code class="js">async function f() {
+    console.log(1)
+    var a = await Promise.resolve(5)
+    console.log(a)
+    var a = await Promise.resolve(5)
+    console.log(a)
+    var a = await Promise.resolve(5)
+    console.log(a)
+}
+//协程   纤程   coroutine
+async function g(){
+    console.log(3)
+    var b = await Promise.resolve(6)
+    console.log(b)
+    var b = await Promise.resolve(6)
+    console.log(b)
+    var b = await Promise.resolve(6)
+    console.log(b)
+}
+
+f()
+g()
+
+console.log(2)</code></pre>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -684,6 +714,14 @@ let res = await Promise.all(promises</code></pre>
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/09/22/基于Express-pug-bootstrap-sqlite实现的投票系统/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -783,7 +821,7 @@ let res = await Promise.all(promises</code></pre>
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         

@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Sep 08 2019 22:55:27 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 14 2019 22:29:36 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 21 2019 11:13:48 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/09/08/前端学习week19/index.html",
     "headline": "前端学习week19",
     "datePublished": "Sun Sep 08 2019 22:55:27 GMT+0800",
-    "dateModified": "Sat Sep 14 2019 22:29:36 GMT+0800",
+    "dateModified": "Sat Sep 21 2019 11:13:48 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ajax"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ajax</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Module"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTTP"><span class="post-toc-number">3.</span> <span class="post-toc-text">HTTP</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ajax"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ajax</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Module"><span class="post-toc-number">2.</span> <span class="post-toc-text">Module</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTTP"><span class="post-toc-number">3.</span> <span class="post-toc-text">HTTP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#零碎知识"><span class="post-toc-number">4.</span> <span class="post-toc-text">零碎知识</span></a></li></ol>
     </ul>
     
 
@@ -603,29 +603,32 @@
 </li>
 <li><p>jsonp就是利用了script标签不受同源策略限制</p>
 <ul>
-<li><pre><code class="html">//使用示例
+<li><pre><code class="php+HTML">&lt;p&gt;//使用示例&lt;/p&gt;
 &lt;script&gt;
     //在本地的脚本中声明了一个回调函数，回调函数名字可以自定义，但与url中要对应
     function getPrice(data) {
         console.log(data)
     }
 &lt;/script&gt;
-//向服务器请求了一个包括回调函数等信息的url的get请求，服务求收到请求时就返回对应响应的json内容，然后在本地调用这个回调函数
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://wsdetail.b2b.hc360.com/getSupplyPrice?callback=getPrice&amp;bcid=47296567&quot;&gt;&lt;/script&gt;
+&lt;p&gt;//向服务器请求了一个包括回调函数等信息的url的get请求，服务求收到请求时就返回对应响应的json内容，然后在本地调用这个回调函数
+
 //为什么会在本地自动调用这个回调函数?
-//解释：需要服务器的配合，服务端在将请求的json数据返回给客户端时会用客户端定义的回调函数名包裹json数据(想想模块的原理)，因为我们已经声明过这个函数，所以可以直接调用
+    //解释：需要服务器的配合，服务端在将请求的json数据返回给客户端时会用客户端定义的回调函数名包裹json数据(想想模块的原理)，因为我们已经声明过这个函数，所以可以直接调用&lt;/p&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://wsdetail.b2b.hc360.com/getSupplyPrice?callback=getPrice&amp;bcid=47296567&quot;&gt;&lt;/script&gt;
 &lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre>
 </li>
 </ul>
 </li>
-<li><p>由此可知jsonp只能用于get请求的跨域，被CORS的方式完爆，只是能支持老式浏览器</p>
-</li>
-<li><p><a href="https://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html" target="_blank" rel="noopener">说说JSON和JSONP</a></p>
-</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<pre><code>
+  - 由此可知jsonp只能用于get请求的跨域，被CORS的方式完爆，只是能支持老式浏览器
+
+      - [说说JSON和JSONP](https://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html)
+&lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre><ul>
 <li><p>http报文的时间单位一般是秒</p>
 </li>
 <li><p>远程过程调用(Remote Procedure Call)</p>
@@ -641,8 +644,7 @@
 <li><p><a href="http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html" target="_blank" rel="noopener">restful</a></p>
 </li>
 </ul>
-<p>###零碎知识</p>
-<ul>
+<h3 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h3><ul>
 <li><p>node环境下的tcp套接字编程</p>
 </li>
 <li><p>服务端</p>
@@ -685,20 +687,23 @@ net.createServer(socket =&gt; {
 </li>
 <li><p>习惯每次data事件处理完后都调用<code>conn.end()</code>来结束连接，我的理解</p>
 <ul>
-<li>同一端口每次只能处理一个连接，不能一直被一个连接占用</li>
+<li>只是为了结束这个TCP连接而已</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>当连接localhost及本机的端口时，可以从服务端socket的remoteAddress看到客户端的ip也为<code>127.0.0.1</code></p>
 <ul>
-<li>注意<code>remoteAddress/remotePort(远程客户端的地址和端口)</code>和<code>localAddress/localPort(本地服务端的地址和端口)</code>都只能在服务端的socket上获取</li>
+<li>注意<code>remoteAddress/remotePort(远程客户端的地址和端口)</code>和<code>localAddress/localPort(本地服务端的地址和端口)</code>都只能在服务端的socket上获取<ul>
+<li>node中tcp的socket概念：我的理解：</li>
 </ul>
 </li>
-<li><p>node中tcp的socket概念：我的理解：</p>
-<ul>
 <li>通过观察，客户端通过<code>new net.Socket()</code>创建的是一个socket类对象，确实是一个socket， 而服务端通过<code>net.createServer()</code>返回的是一个server类，这个server并不是socket，而server监听connection事件触发时得到的连接(即传给处理机的参数)是一个socket类，即在server端每次监听到client的连接请求时才创建一个socket，实际上是这个新创建的socket和客户端创建的socket建立了连接</li>
-<li>server将事件处理全部写在<code>net.createServer</code>中的形式似乎更好理解</li>
+<li>server将事件处理全部写在<code>net.createServer</code>中的形式似乎更好理解<ul>
+<li>再谈socket的理解：socket可以看作是封装好的传输层接口，提供了多个函数和属性用于建立通信，在一台主机上的一个端口只能bind一个socket，也即一个端口同时只能被一个进程占用，而一个socket可以与多个socket建立连接，而一个端口也能并发处理多个请求</li>
 </ul>
 </li>
+<li><a href="https://blog.csdn.net/u011580175/article/details/80306414" target="_blank" rel="noopener">Socket编程之一个端口能建立多个TCP连接？</a></li>
 </ul>
 </li>
 </ul>
@@ -853,7 +858,7 @@ net.createServer(socket =&gt; {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
