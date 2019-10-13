@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Mon Sep 23 2019 09:04:17 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 23 2019 09:08:55 GMT+0800">
+        <meta property="article:modified_time" content="Sat Oct 05 2019 11:30:32 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/09/23/前端学习week21/index.html",
     "headline": "前端学习week21",
     "datePublished": "Mon Sep 23 2019 09:04:17 GMT+0800",
-    "dateModified": "Mon Sep 23 2019 09:08:55 GMT+0800",
+    "dateModified": "Sat Oct 05 2019 11:30:32 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -577,7 +577,8 @@ new Transform({
         this.push()
         callback()
     }
-})</code></pre>
+})
+&lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre>
 </li>
 </ul>
 </li>
@@ -609,9 +610,48 @@ new Transform({
 </li>
 <li><p>关于<code>process.nextTick(callback)</code>的理解</p>
 <ul>
-<li>一次事件循环叫做一个tick，</li>
-<li>与setTimeout，setImmediate区别？</li>
-<li>不同node版本中行为不同，待解决</li>
+<li><p>Node中的事件循环</p>
+</li>
+<li><p><a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/" target="_blank" rel="noopener">The Node.js Event Loop, Timers, and process.nextTick()</a></p>
+<ul>
+<li><pre><code class="js">//例子1
+seTimeout(() =&gt; {
+    console.log(1)
+}, 0)
+setImmediate(() =&gt; {
+    console.log(2)
+})//1,2顺序不确定
+//例子2 
+var fs = require(&#39;fs&#39;)
+fs.readFile(&#39;a.txt&#39;, (err, data) =&gt; {
+    seTimeout(() =&gt; {
+        console.log(1)
+    }, 0)
+    setImmediate(() =&gt; {
+        console.log(2)
+    })
+})//先2后1</code></pre>
+</li>
+<li><p>timers阶段：定时器设定的回调函数</p>
+</li>
+<li><p>check阶段：setImmediate的回调</p>
+<ul>
+<li>setImmediate和setTimeout是执行的时候将回调加入下一个对应的阶段执行</li>
+</ul>
+</li>
+<li><p>poll阶段：读文件等回调函数的执行阶段，一直pending状态并阻塞后面的流程直到数据到达然后执行回调，若下一个timers阶段有任务执行则会阻塞设定的时间</p>
+</li>
+<li><p><code>process.nextTick()</code>的<code>nextTickQueue</code> 回调会在两个阶段之间执行(而不论当前在哪个阶段)，所以在<code>process.nextTick()</code>中递归调<code>process.nextTick()</code>会在进入下一阶段前就执行</p>
+</li>
+<li><p>node中的promise.then和process.nextTick一样不属于任何一个阶段，再两个阶段之间执行，但promise.then的优先级比process.nextTick低</p>
+</li>
+</ul>
+</li>
+<li><p>浏览器的事件循环只分为宏任务和微任务，先宏任务再微任务再循环，宏任务每次只执行队列中的一个，微任务阶段将微任务全部执行，微任务的异步递归也会阻塞宏任务的执行</p>
+<ul>
+<li>浏览器中微任务执行早于打印同步代码求值结果，宏任务晚于求值结果打印</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -662,8 +702,12 @@ new Transform({
 <li><a href="https://humanwhocodes.com/blog/2009/05/05/http-cookies-explained/" target="_blank" rel="noopener">HTTP cookies 详解</a></li>
 </ul>
 </li>
-<li>再说说cookie的理解：cookie并不是指整个数据交换的系统，而是指浏览器存储服务器发送过来的一小段数据的一种功能，每次访问服务器都会带上这段数据，以前是通过存储sessionID来达到保持登陆的效果，现在是存储token<ul>
+<li>说说cookie的理解：cookie并不是指整个数据交换的系统，而是指浏览器存储服务器发送过来的一小段数据的一种功能，每次访问服务器都会带上这段数据，以前是通过存储sessionID来达到保持登陆的效果，现在是存储token<ul>
 <li><a href="https://zhuanlan.zhihu.com/p/63061864?utm_source=qq&utm_medium=social&utm_oi=825704129925120000" target="_blank" rel="noopener">彻底理解cookie，session，token</a></li>
+<li>再聊聊cookie，token和session：cookie是什么上面已经说明了，token可以看作是一段只有服务端能验证的信息，而session是保存在服务器，存储了客户端一次会话的信息(通过sessionID+cookie的方式使客户端在一次会话中对该服务的的多次请求不再需要验证)，会话结束会被清除(因为服务器内存有限)<ul>
+<li>session是客户端第一次请求时在服务端创建的，而session的生命周期并不是客户端打开浏览器到关闭的这段时间(因为服务端无法判断客户端是否关闭了浏览器)，而是设置一段有效时间，当客户端在这个时间内再次请求则这个session会被激活(active)，否则被清除</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -676,6 +720,7 @@ new Transform({
 </ul>
 </li>
 <li>http1.0协议在一次request和一次response之后就结束了。http1.1多了一个<code>keep-alive</code>可以发送多次请求和响应</li>
+<li>MutationObserver监控dom节点的变化，微任务</li>
 </ul>
 
         
@@ -721,6 +766,14 @@ new Transform({
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/10/13/前端学习week22/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -820,7 +873,7 @@ new Transform({
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
