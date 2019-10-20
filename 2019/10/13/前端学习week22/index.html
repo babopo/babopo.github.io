@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Oct 13 2019 22:45:56 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 13 2019 22:58:10 GMT+0800">
+        <meta property="article:modified_time" content="Sun Oct 20 2019 09:01:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/10/13/前端学习week22/index.html",
     "headline": "前端学习week22",
     "datePublished": "Sun Oct 13 2019 22:45:56 GMT+0800",
-    "dateModified": "Sun Oct 13 2019 22:58:10 GMT+0800",
+    "dateModified": "Sun Oct 20 2019 09:01:59 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -539,7 +539,11 @@
 </ul>
 <h3 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h3><ul>
 <li><a href="https://lit-html.polymer-project.org/guide" target="_blank" rel="noopener">lit-html</a></li>
-<li>dom diff</li>
+<li>dom diff<ul>
+<li><a href="https://www.zhihu.com/question/66851503/answer/246766239" target="_blank" rel="noopener">dom diff的时间复杂度分析</a></li>
+<li>react中的diff算法是同层级比较，不同类型的元素会以此元素为根结点将整棵树拆解重新装载，同一类型的则会保留dom结点，只修改改变的属性/值，重新调用实例的render（这里可以在组件类中设置shouldComponentUpdate的生命周期方法，来达到性能优化的目的），当一个dom元素有多个子元素时可以给子元素设置单独的key来优化使利用重复元素，注意key只在不得已时可以使用index，因为重排会改变其index，而算法根据这个key对比，可能达不到预期效果，降低了算法处理的效率</li>
+</ul>
+</li>
 <li><a href="https://blog.fundebug.com/2019/06/26/vue-virtual-dom/" target="_blank" rel="noopener">vue中的虚拟DOM</a></li>
 </ul>
 <h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h3><ul>
@@ -628,35 +632,32 @@ function mapGetters(getterFields) {
 </li>
 <li><p>子组件中通过<code>this.$store</code>访问根实例中注册的store实例</p>
 </li>
+<li><p>mutations 同步 actions 异步，因为actions要通过commit方法提交</p>
+</li>
+<li><p>store中只有getters能访问其他getters，这个设定很是奇怪</p>
+</li>
 </ul>
 <h4 id="Vue模块化机制-单文件组件"><a href="#Vue模块化机制-单文件组件" class="headerlink" title="Vue模块化机制(单文件组件)"></a>Vue模块化机制(单文件组件)</h4><ul>
 <li><p>现在已经是vue/cli的第三版了，配置简化了很多，通过<code>vue create xxx</code>创建项目后根据tutorial选择即可，甚至最后的项目文件中webpack等的配置文件也不给了，添加或修改配置需要自己创建文件</p>
 </li>
 <li><p>启用<strong>路由</strong></p>
 <ul>
-<li><p>注意默认的路由模式是hash模式，即只改变url中#后面的值，这样访问的依然是同一个网页，只是内容不同，所以url中间有一个 <code>/#/</code></p>
-<ul>
+<li>注意默认的路由模式是hash模式，即只改变url中#后面的值，这样访问的依然是同一个网页，只是内容不同，所以url中间有一个 <code>/#/</code><ul>
 <li>启用history模式，利用的是bom的原生<code>history.pushState()</code>api，可以没有<code>#</code>，具体操作需要在前端router中指定base，然后在后端设置对含有这个路由的请求都返回同样的页面</li>
 <li>history模式下的base选项设置好后，router-link标签的to属性就不再需要写基路径了，仅此而已</li>
 </ul>
 </li>
-<li><p><code>.router-link-active</code>的active class匹配是包容的，即只要url中有能匹配上的字段都能匹配成功， <code>router-link</code>中使用exact属性表示完全匹配才生效</p>
-</li>
-<li><p>路由中使用的组件，即router中的routes属性的配置中的componet属性可以是<code>Vue.extend()</code> 创建的组件构造器，或者只是一个组件配置对象</p>
-</li>
-<li><p>html引入<code>vue-router.js</code>之前一定要先引入<code>vue.js</code>，否则报错</p>
-</li>
-<li><p>子路由只能在父级路由的router-view中渲染，无法覆盖整个页面</p>
-</li>
-<li><p>分清<code>$route</code>和<code>$router</code>，前者指的当前路由，可以从<code>$route.params.xxx</code>获取参数，后者指整个路由对象，可以调用go，push等方法使当前路由改变</p>
-</li>
-<li><p>为什么在原来的写法中直接引入<code>vue-router</code>就可以使用，而在单文件组件中需要先使用<code>Vue.use(vueRouter)</code>安装插件才能使用？</p>
-<ul>
-<li>vue-router代码内部会检测全局是否存在Vue这个属性，存在则自动调用<code>window.Vue.use()</code>安装，注意是window的属性Vue，否则才需要手动调用(这也解释了原来的写法为什么不能在vue之前先引入vue-router就直接使用)，而在模块中我们是用import引入的(实际上vue-router的源码中并没有es6的export语法，是以module.exports形式导出的，import会被babel转化为es5语法)，所以并没有这个<code>window.Vue</code>这个属性，需要我们手动注册</li>
+<li><code>.router-link-active</code>的active class匹配是包容的，即只要url中有能匹配上的字段都能匹配成功， <code>router-link</code>中使用exact属性表示完全匹配才生效</li>
+<li>路由中使用的组件，即router中的routes属性的配置中的componet属性可以是<code>Vue.extend()</code> 创建的组件构造器，或者只是一个组件配置对象</li>
+<li>html引入<code>vue-router.js</code>之前一定要先引入<code>vue.js</code>，否则报错</li>
+<li>子路由只能在父级路由的router-view中渲染，无法覆盖整个页面</li>
+<li>分清<code>$route</code>和<code>$router</code>，前者指的当前路由，可以从<code>$route.params.xxx</code>获取参数，后者指整个路由对象，可以调用go，push等方法使当前路由改变<ul>
+<li>使用路由参数通过组件的props传参时注意参数名和组件中props属性名要对应</li>
 </ul>
 </li>
-<li><p>注意工具都是使用<code>-D</code>命令安装在开发依赖(一般放一些打包工具和编译工具等)中的，安装时注意是否需要安装到生产依赖中</p>
-</li>
+<li>为什么在原来的写法中直接引入<code>vue-router</code>就可以使用，而在单文件组件中需要先使用<code>Vue.use(vueRouter)</code>安装插件才能使用？</li>
+<li>vue-router代码内部会检测全局是否存在Vue这个属性，存在则自动调用<code>window.Vue.use()</code>安装，注意是window的属性Vue，否则才需要手动调用(这也解释了原来的写法为什么不能在vue之前先引入vue-router就直接使用)，而在模块中我们是用import引入的(实际上vue-router的源码中并没有es6的export语法，是以module.exports形式导出的，import会被babel转化为es5语法)，所以并没有这个<code>window.Vue</code>这个属性，需要我们手动注册</li>
+<li>注意工具都是使用<code>-D</code>命令安装在开发依赖(一般放一些打包工具和编译工具等)中的，安装时注意是否需要安装到生产依赖中</li>
 </ul>
 </li>
 <li><p>runtime版的vue没有compile函数，runtime版本和dev版本的区别</p>
@@ -689,9 +690,9 @@ export const EventBus = new Vue()
 </li>
 </ul>
 </li>
-<li><p>es6的import必须引入有export的js文件，但是通过webpack配置可以引入css和没有export的js，vue/cli中的自动配置就是这种，神奇</p>
-</li>
 <li><p>单文件组件中css局部生效的原理是在选择器和对应标签上加上独一对应的data-set属性</p>
+</li>
+<li><p>在单文件中使用生命周期函数指的是当前组件的根组件，比如子组件重新渲染时update就不会触发，需要到对应的子组件中使用其生命周期函数</p>
 </li>
 </ul>
 <h4 id="Web-components"><a href="#Web-components" class="headerlink" title="Web components"></a>Web components</h4><ul>
@@ -701,6 +702,12 @@ export const EventBus = new Vue()
 <h3 id="坑中之坑webpack"><a href="#坑中之坑webpack" class="headerlink" title="坑中之坑webpack"></a>坑中之坑webpack</h3><ul>
 <li><a href="https://segmentfault.com/a/1190000015648036" target="_blank" rel="noopener">webpack动态加载模块</a></li>
 <li><a href="https://juejin.im/post/5d0206a36fb9a07ee5661905" target="_blank" rel="noopener">打包原理</a></li>
+<li>vue中的import<ul>
+<li>两种形式</li>
+<li><code>import a from &#39;xxxx/a&#39;</code>  这种是es6语法，需要在a文件中export导出内容才能使用</li>
+<li><code>import &#39;xxxxx/a&#39;</code> 这种应该是webpack配置的，相当于html的script标签，可以直接引入可执行的js和css文件，但是在单文件组件中使用需要注意变量的作用域(是否挂载在window上)</li>
+</ul>
+</li>
 </ul>
 <h3 id="Element-UI"><a href="#Element-UI" class="headerlink" title="Element UI"></a>Element UI</h3><ul>
 <li>用了一下element组件库，记录一些坑</li>
@@ -766,7 +773,7 @@ email: [
 </li>
 <li><p>Koa和express的区别，koa中next返回一个promise，使用await next()时，会等到next调用的下一个中间件执行完成才会执行当前中间件接下来的代码，而express中是直接将当前中间件执行完</p>
 </li>
-<li><p>es6的class，构造函数中调用super前不能使用this，因为调用super是创建了一个父类的实例再将this指向了这个实例(参考babel的实现)</p>
+<li><p>es6的class，构造函数中调用super前不能使用this，因为调用super相当于调用了父类的构造函数，创建了一个父类的实例再将this指向了这个实例(参考babel的实现)</p>
 </li>
 <li><p><code>class B extends A {}</code>中的关系</p>
 <ul>
@@ -852,6 +859,14 @@ function htmldecode(s){
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/10/20/前端学习week23/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -951,7 +966,7 @@ function htmldecode(s){
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
