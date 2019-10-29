@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Mon Sep 23 2019 09:04:17 GMT+0800">
-        <meta property="article:modified_time" content="Sat Oct 05 2019 11:30:32 GMT+0800">
+        <meta property="article:modified_time" content="Mon Oct 28 2019 10:00:42 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/09/23/前端学习week21/index.html",
     "headline": "前端学习week21",
     "datePublished": "Mon Sep 23 2019 09:04:17 GMT+0800",
-    "dateModified": "Sat Oct 05 2019 11:30:32 GMT+0800",
+    "dateModified": "Mon Oct 28 2019 10:00:42 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -710,6 +710,16 @@ fs.readFile(&#39;a.txt&#39;, (err, data) =&gt; {
 </li>
 </ul>
 </li>
+<li>现在的解决方案是用JWT(json web token)，我理解的应该就是包含更多信息的token<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html" target="_blank" rel="noopener">JSON Web Token 入门教程</a></li>
+<li>base64URL编码(注意和传统的base64编码的区别，=+/这几个字符在url中有特殊含义)，包含三个部分(三个json对象编码转成的字符串)，以<code>.</code>分隔<ul>
+<li>header</li>
+<li>payload</li>
+<li>signature</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="http://www.ruanyifeng.com/blog/2011/09/curl.html" target="_blank" rel="noopener">curl命令</a></li>
@@ -873,7 +883,7 @@ fs.readFile(&#39;a.txt&#39;, (err, data) =&gt; {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         

@@ -254,7 +254,7 @@
 
     
         <meta property="article:published_time" content="Sun Oct 20 2019 20:50:41 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 20 2019 20:51:38 GMT+0800">
+        <meta property="article:modified_time" content="Mon Oct 28 2019 22:11:55 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/10/20/前端学习week23/index.html",
     "headline": "前端学习week23",
     "datePublished": "Sun Oct 20 2019 20:50:41 GMT+0800",
-    "dateModified": "Sun Oct 20 2019 20:51:38 GMT+0800",
+    "dateModified": "Mon Oct 28 2019 22:11:55 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -370,7 +370,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React"><span class="post-toc-number">1.</span> <span class="post-toc-text">React</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hooks"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Hooks</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#react-router"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">react-router</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">2.</span> <span class="post-toc-text">redux</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React"><span class="post-toc-number">1.</span> <span class="post-toc-text">React</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hooks"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Hooks</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#react-in-css"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">react in css</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#react-router"><span class="post-toc-number">2.</span> <span class="post-toc-text">react-router</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#redux"><span class="post-toc-number">3.</span> <span class="post-toc-text">redux</span></a></li></ol>
     </ul>
     
 
@@ -580,14 +580,18 @@
 <li><strong>不能在函数组件上使用 ref 属性</strong>，因为它们没有实例 (函数式组件在使用时是直接调用，class式组件是创建一个实例)，但是可以在函数组件内部的元素上使用</li>
 <li><strong>不要用字符串形式的ref</strong></li>
 <li>ref转发<code>React.forwardRef</code></li>
+<li>ref不在props里，是单独处理的属性，不会向下传递</li>
 </ul>
 </li>
 <li><p>三个被标记为unsafe即将废弃的生命周期函数</p>
 <ul>
-<li><code>componentWillMount</code></li>
+<li><code>componentWillMount</code><ul>
+<li>不建议在这一步调ajax等异步请求，因为render是紧随其后运行的，相当于在constructor中调用</li>
+</ul>
+</li>
 <li><code>componentWillReceiveProps</code></li>
 <li><code>componentWillUpdate</code></li>
-<li>原因是在异步渲染时会造成未预料的问题<a href="https://zh-hans.reactjs.org/blog/2018/03/27/update-on-async-rendering.html" target="_blank" rel="noopener">update on async rendering</a></li>
+<li>原因是在异步渲染时会造成未预料的问题<a href="https://zh-hans.reactjs.org/blog/2018/03/27/update-on-async-rendering.html" target="_blank" rel="noopener">update on async rendering</a>—-fiber架构异步渲染使render之前的函数可能执行多次，若这些函数会产生副作用，则会产生bug</li>
 </ul>
 </li>
 <li><p>render method should be pure function of props &amp; state</p>
@@ -601,7 +605,8 @@
 <li><pre><code class="jsx">&lt;MyContext.Consumer&gt;
   {value =&gt; /* 基于 context 值进行渲染*/}
     //value就是provider上的值
-&lt;/MyContext.Consumer&gt;</code></pre>
+&lt;/MyContext.Consumer&gt;
+&lt;p class=&quot;code-caption&quot; data-lang=&quot;&quot; data-line_number=&quot;frontend&quot; data-trim_indent=&quot;backend&quot; data-label_position=&quot;outer&quot; data-labels_left=&quot;Code&quot; data-labels_right=&quot;:&quot; data-labels_copy=&quot;Copy Code&quot;&gt;&lt;span class=&quot;code-caption-label&quot;&gt;&lt;/span&gt;&lt;a class=&quot;code-caption-copy&quot;&gt;Copy Code&lt;/a&gt;&lt;/p&gt;</code></pre>
 </li>
 <li></li>
 </ul>
@@ -613,19 +618,39 @@
 <li><a href="https://immerjs.github.io/immer/docs/introduction" target="_blank" rel="noopener">immer</a></li>
 </ul>
 </li>
+<li><p>suspense  通过 React.lazy动态加载组件，用<code>React.lazy()</code>构造普通组件的高阶组件</p>
+<ul>
+<li><pre><code class="react">&lt;React.suspense fallback={&lt;div&gt;loading。。。&lt;div&gt;}&gt;
+    &lt;LazyedComponent /&gt;  //这个子组件可以在子树中的任何位置，也可以有多个这样的组件
+&lt;/React.suspense&gt;</code></pre>
+</li>
+<li><p>suspense组件使用了错误边界</p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=6g3g0Q_XVb4&tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">Dan Abramov - Suspense!</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=v6iR3Zk4oDY&tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">Beyond React 16 by Dan Abramov</a></p>
+</li>
+</ul>
+</li>
+<li><p><code>React.memo()</code> 包装函数子组件使防止父组件更新时的该子组件重新渲染，props浅对比</p>
+</li>
 </ul>
 <h4 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h4><ul>
 <li><p>useState 返回的赋值函数会完全覆盖之前的值，不是合并(与class中的this.setState不同)</p>
 </li>
 <li><p>useState内部可能是通过栈来判断是哪个组件在调用这个函数，同一个函数组件中多个useState的返回结果依赖其调用顺序，所以要包证该组件函数在多次调用时其useState的个数和变量名不变</p>
 </li>
-<li><p>useEffect传入第二个数组参数跳过这个步骤时，注意内部函数的作用域，数组中要包含useEffect要使用的变量，否则会执行最初作用域的函数(空数组表示只有挂载卸载时会执行)</p>
+<li><p>useEffect传入第二个数组参数跳过这个步骤时，注意内部函数的作用域，数组中要包含useEffect要使用的变量，这些变量改变时才执行，否则会执行最初作用域的函数(空数组表示只有挂载卸载时会执行)</p>
 <ul>
 <li>useEffect在第一次渲染和每次更新后都会执行(相当于 componentDidMount  +  componentDidUpdate  但不会阻塞浏览器更新屏幕)</li>
+<li>注意useEffct是在渲染<strong>后</strong>和更新<strong>后</strong>才执行的</li>
 </ul>
 </li>
 </ul>
-<h4 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h4><ul>
+<h4 id="react-in-css"><a href="#react-in-css" class="headerlink" title="react in css"></a>react in css</h4><ul>
+<li><a href="https://medium.com/@dmitrynozhenko/9-ways-to-implement-css-in-react-js-ccea4d543aa3" target="_blank" rel="noopener">9 Ways To Implement CSS in React JS</a></li>
+</ul>
+<h3 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h3><ul>
 <li><a href="https://reacttraining.com/react-router/web/guides/quick-start" target="_blank" rel="noopener">guide</a></li>
 </ul>
 <h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3>
@@ -672,6 +697,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/10/29/前端学习week24/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -771,7 +804,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
