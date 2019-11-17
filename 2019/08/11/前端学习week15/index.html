@@ -63,7 +63,7 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。此外leetcode到了277，写复杂情况的题还是思路广度不太够">
+    <meta name="description" itemprop="description" content="​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。">
     <meta name="keywords" content=",front-end,javascript">
     <meta name="theme-color" content="#0097A7">
 
@@ -249,12 +249,12 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="前端学习week15 | Limbo">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。此外leetcode到了277，写复杂情况的题还是思路广度不太够">
+    <meta property="og:description" content="​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。">
     <meta property="og:article:tag" content="front-end"> <meta property="og:article:tag" content="javascript"> 
 
     
         <meta property="article:published_time" content="Sun Aug 11 2019 22:44:16 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 21 2019 11:55:58 GMT+0800">
+        <meta property="article:modified_time" content="Tue Nov 12 2019 22:53:54 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "babopo.github.io/2019/08/11/前端学习week15/index.html",
     "headline": "前端学习week15",
     "datePublished": "Sun Aug 11 2019 22:44:16 GMT+0800",
-    "dateModified": "Sat Sep 21 2019 11:55:58 GMT+0800",
+    "dateModified": "Tue Nov 12 2019 22:53:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -296,7 +296,7 @@
         }
     },
     "keywords": ",front-end,javascript",
-    "description": "​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。此外leetcode到了277，写复杂情况的题还是思路广度不太够",
+    "description": "​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。",
 }
 </script>
 
@@ -520,7 +520,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。此外leetcode到了277，写复杂情况的题还是思路广度不太够</p>
+        <p>​    本周主要学习了js的模块化的基本概念CommonJs，以及一点点编译原理的知识，字符令牌(token)化处理(其实在js的正则中捕获分组就是将字符token化)和递归下降，其实递归下降的概念很好理解，就是分析一个表达语句的字符串，遇到不同的操作交给不同的函数处理，这个过程叫做下降，而操作的表达式又需要递归处理。另外的重点是es6中的生成器以及Symbol数据类型，概念比较好理解，通过了迭代器也解释了为什么for-of，扩展运算符等可以对数组字符串等进行操作，Symbol还有很多边边角角的概念就懒得看了。这周还纠结了一些作用域的概念(见最后)，还是很有必要弄清楚的。</p>
 <a id="more"></a>
 
 <h3 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器 generator"></a>生成器 generator</h3><ul>
@@ -847,7 +847,7 @@ a.x = a = {1:1}
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">4</span></a>
             </ul>
         </li>
         
