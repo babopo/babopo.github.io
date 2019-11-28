@@ -53,8 +53,6 @@
     
     <title>
         
-            一些可能要求手写的代码 | 
-        
         Limbo
     </title>
 
@@ -64,7 +62,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content=",front-end">
+    <meta name="keywords" content>
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -247,14 +245,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="babopo.github.io/2019/11/17/一些可能要求手写的代码/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="一些可能要求手写的代码 | Limbo">
+    <meta property="og:title" content="Limbo">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    <meta property="og:article:tag" content="front-end"> 
+    
 
     
         <meta property="article:published_time" content="Sun Nov 17 2019 10:10:32 GMT+0800">
-        <meta property="article:modified_time" content="Sun Nov 17 2019 10:11:20 GMT+0800">
+        <meta property="article:modified_time" content="Thu Nov 28 2019 11:47:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -275,9 +273,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html",
-    "headline": "一些可能要求手写的代码",
+    "headline": "",
     "datePublished": "Sun Nov 17 2019 10:10:32 GMT+0800",
-    "dateModified": "Sun Nov 17 2019 10:11:20 GMT+0800",
+    "dateModified": "Thu Nov 28 2019 11:47:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Limbo",
@@ -295,7 +293,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",front-end",
+    "keywords": "",
     "description": "",
 }
 </script>
@@ -370,7 +368,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#排序算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">排序算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节流和防抖"><span class="post-toc-number">2.</span> <span class="post-toc-text">节流和防抖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现promise"><span class="post-toc-number">3.</span> <span class="post-toc-text">实现promise</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现JSON-parser"><span class="post-toc-number">4.</span> <span class="post-toc-text">实现JSON parser</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现深拷贝"><span class="post-toc-number">5.</span> <span class="post-toc-text">实现深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个new"><span class="post-toc-number">6.</span> <span class="post-toc-text">实现一个new</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#排序算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">排序算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节流和防抖"><span class="post-toc-number">2.</span> <span class="post-toc-text">节流和防抖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现promise"><span class="post-toc-number">3.</span> <span class="post-toc-text">实现promise</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现JSON-parser"><span class="post-toc-number">4.</span> <span class="post-toc-text">实现JSON parser</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现深拷贝"><span class="post-toc-number">5.</span> <span class="post-toc-text">实现深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个new"><span class="post-toc-number">6.</span> <span class="post-toc-text">实现一个new</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现一个LazyMan"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现一个LazyMan</span></a></li></ol>
     </ul>
     
 
@@ -402,7 +400,7 @@
         
     
             <p class="article-headline-p">
-                一些可能要求手写的代码
+                
             </p>
         </div>
 
@@ -451,15 +449,6 @@
 
     <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/front-end/">front-end</a>
-    </ul>
-    
 
     <!-- Share -->
     
@@ -474,7 +463,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=一些可能要求手写的代码&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html&pic=babopo.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html&pic=babopo.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -483,7 +472,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=一些可能要求手写的代码&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html&via=Limbo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html&via=Limbo" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -501,7 +490,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Limbo&title=一些可能要求手写的代码&summary=&pics=babopo.github.io/img/favicon.png&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Limbo&title=&summary=&pics=babopo.github.io/img/favicon.png&url=babopo.github.io/2019/11/17/一些可能要求手写的代码/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -520,9 +509,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <a id="more"></a>
-
-<h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3><ul>
+        <h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3><ul>
 <li><p>快排</p>
 <ul>
 <li><pre><code class="js">function quickSort(arr) {
@@ -645,36 +632,7 @@ const debounce = (fn, wait) =&gt; {
 }</code></pre>
 <h3 id="实现promise"><a href="#实现promise" class="headerlink" title="实现promise"></a>实现promise</h3><p class="code-caption" data-lang="js" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
 ``` js 
-function promise(fn) {
-    this.state = 'pending'
-    this.value = null
-    this.reason = null
-    // 存放成功和失败的then回调
-    this.onresolved = []
-    this.onrejected = []
-    const self = this
-    function resolve(value) {
-        if(self.state === 'pending') {
-            self.value = value
-            self.state = 'fullFilled'
-            self.onresolved.forEach(it => it(self.value))
-        }
-    }
-    function reject(reason) {
-        if(self.state === 'pending') {
-            self.reason = reason
-            self.state = 'rejected'
-            self.onrejected.forEach(it => it(self.reason))
-        }
-    }
-    try {
-        fn(resolve, reject)
-    } catch(e) {
-        reject(e)
-    }
-}
 
-<p>promise.prototype.then = function(onfullfilled, onrejected) {<br>    const self = this<br>    if(self.state === ‘fullFilled’) {<br>        onfullfilled(self.value)<br>    }<br>    if(self.state === ‘rejected’) {<br>        onrejected(self.reason)<br>    }<br>    if(self.state === ‘pending’) {<br>        self.onresolved.push(onfullfilled)<br>        self.onrejected.push(onrejected)<br>    }<br>    return self<br>}</p>
 <pre><code>
 
 
@@ -827,6 +785,58 @@ function deepClone(target) {
     f.call(res, ...args)
     return res 
 }</code></pre>
+<h3 id="实现一个LazyMan"><a href="#实现一个LazyMan" class="headerlink" title="实现一个LazyMan"></a>实现一个LazyMan</h3><ul>
+<li><pre><code class="js">class LazyMan {
+    constructor(name) {
+        this.stack = []
+        const task = () =&gt; setTimeout(() =&gt; {
+            console.log(name)
+            this.next()
+        })
+        this.stack.push(task)
+        setTimeout(() =&gt; {
+            this.next()
+        }, 0)
+    }
+
+    sleep(time) {
+        const task = () =&gt; setTimeout(() =&gt; {
+            console.log(&#39;sleep &#39; + time)
+            this.next()
+        }, time)
+        this.stack.push(task)
+        return this
+    }
+
+    eat(meal) {
+        const task = () =&gt; setTimeout(() =&gt; {
+            console.log(&#39;eat &#39; + meal)
+            this.next()
+        })
+        this.stack.push(task)
+        return this
+    }
+
+    sleepFirst(time) {
+        const task = () =&gt; setTimeout(() =&gt; {
+            console.log(&#39;sleep &#39; + time)
+            this.next()
+        }, time)
+        //无论什么时候进入队列都会在最开始执行
+        this.stack.unshift(task)
+        return this
+    }
+
+    next() {
+        //重点是通过栈和next的尾调用来实现执行队列
+        const task = this.stack.shift()
+        // 有则调用task
+        task &amp;&amp; task()
+    }
+}</code></pre>
+</li>
+<li></li>
+</ul>
 
         
     
